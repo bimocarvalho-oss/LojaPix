@@ -2,130 +2,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fone Bluetooth A6S - Promoção</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e0f7fa, #ffffff);
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background: #00796b;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .produto-img {
-            text-align: center;
-        }
-        .produto-img img {
-            max-width: 300px;
-            border-radius: 10px;
-        }
-        h2 {
-            color: #00796b;
-        }
-        .preco {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d32f2f;
-            margin: 20px 0;
-        }
-        .pix-info, .pix-code {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            text-align: center;
-            word-break: break-all;
-        }
-        button {
-            background: #00796b;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            margin: 10px 0;
-            cursor: pointer;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-        button:hover {
-            background: #004d40;
-        }
-        .whatsapp-btn {
-            display: block;
-            text-align: center;
-            background: #25d366;
-            color: white;
-            padding: 14px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        .whatsapp-btn:hover {
-            background: #1ebe5d;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LojaPix - Sua Loja Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: linear-gradient(135deg, #f0f9ff, #ffffff);
+      color: #333;
+    }
+    header {
+      background: #00796b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      max-width: 200px;
+      border-radius: 8px;
+    }
+    .price {
+      font-size: 20px;
+      color: #d32f2f;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #00796b;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #004d40;
+    }
+    .soon {
+      color: #999;
+      font-style: italic;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>Promoção - Fone Bluetooth A6S</header>
-    <div class="container">
-        <div class="produto-img">
-            <img src="fone_a6s.jpg" alt="Fone Bluetooth A6S">
-        </div>
-        <h2>Fone Bluetooth A6S - Som de Qualidade sem Fios</h2>
-        <p>Chegou o fone sem fio perfeito para o seu dia a dia! Com conexão rápida via Bluetooth, bateria de longa duração e design confortável, o <strong>Fone A6S</strong> é ideal para músicas, chamadas e jogos.</p>
-        
-        <div class="preco">🔥 Apenas R$ 49,90</div>
-        
-        <h3>Pagamento via Pix</h3>
-        <div class="pix-info">
-            <p><strong>Nome:</strong> Alexsander</p>
-            <p><strong>Chave Pix:</strong> 12998022977</p>
-            <p><strong>Valor:</strong> R$ 49,90</p>
-        </div>
-
-        <p>Escaneie o QR Code abaixo ou copie o código Pix:</p>
-        <div class="produto-img">
-            <img src="qrcode-pix.png" alt="QR Code Pix">
-        </div>
-
-        <div class="pix-code" id="pixCode">
-            00020101021226930014BR.GOV.BCB.PIX2571spi-qrcode.bancointer.com.br/spi/pj/v2/3271225d93504902b7ed9a572b82ce0e52040000530398654049.905802BR5901*6009SAO PAULO61080453206062070503***6304D604
-        </div>
-
-        <button onclick="copiarPix()">📋 Copiar código Pix</button>
-
-        <a class="whatsapp-btn" href="https://wa.me/5547988506647?text=Ol%C3%A1!%20Quero%20comprar%20o%20Fone%20Bluetooth%20A6S%20por%20R$49,90.%20Segue%20o%20comprovante%20do%20pagamento.">
-            📲 Enviar comprovante no WhatsApp
-        </a>
+  <header>🛒 LojaPix - Produtos em Destaque</header>
+  <div class="container">
+    <div class="card">
+      <img src="fone_a6s.jpg" alt="Fone A6S">
+      <h3>Fone Bluetooth A6S</h3>
+      <div class="price">R$ 49,90</div>
+      <a href="fone/index.html" class="btn">Ver Produto</a>
     </div>
-
-    <script>
-        function copiarPix() {
-            var codigo = document.getElementById("pixCode").innerText;
-            navigator.clipboard.writeText(codigo).then(function() {
-                alert("✅ Código Pix copiado com sucesso!");
-            }, function() {
-                alert("❌ Não foi possível copiar o código Pix.");
-            });
-        }
-    </script>
+    <div class="card">
+      <img src="smartwatch.jpg" alt="Smartwatch">
+      <h3>Smartwatch</h3>
+      <div class="soon">⏳ Em breve</div>
+    </div>
+    <div class="card">
+      <img src="liquidificador.jpg" alt="Liquidificador portátil">
+      <h3>Liquidificador Portátil</h3>
+      <div class="soon">⏳ Em breve</div>
+    </div>
+  </div>
 </body>
 </html>
