@@ -2,91 +2,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LojaPix - Sua Loja Online</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: linear-gradient(135deg, #f0f9ff, #ffffff);
-      color: #333;
-    }
-    header {
-      background: #00796b;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .card img {
-      max-width: 200px;
-      border-radius: 8px;
-    }
-    .price {
-      font-size: 20px;
-      color: #d32f2f;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-    .btn {
-      display: inline-block;
-      background: #00796b;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #004d40;
-    }
-    .soon {
-      color: #999;
-      font-style: italic;
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Pix - Vitrine</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f9; }
+        header { background: #28a745; color: #fff; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; transition: transform 0.2s; }
+        .card:hover { transform: scale(1.05); }
+        .card img { width: 100%; border-radius: 10px; }
+        .price { font-size: 18px; color: #28a745; font-weight: bold; margin: 10px 0; }
+        .btn { display: inline-block; padding: 10px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        .btn:hover { background: #218838; }
+        footer { text-align: center; padding: 15px; background: #333; color: #fff; margin-top: 20px; }
+    </style>
 </head>
 <body>
-  <header>🛒 LojaPix - Produtos em Destaque</header>
-  <div class="container">
-    <div class="card">
-      <img src="fone_a6s.jpg" alt="Fone A6S">
-      <h3>Fone Bluetooth A6S</h3>
-      <div class="price">R$ 49,90</div>
-      <a href="fone/index.html" class="btn">Ver Produto</a>
+    <header>🛒 Loja Pix</header>
+    <div class="container">
+        <div class="card">
+            <img src="fone1.jpg" alt="Fone A6S">
+            <h3>Fone Bluetooth A6S</h3>
+            <p class="price">R$ 49,90</p>
+            <a href="fone/index.html" class="btn">Ver Produto</a>
+        </div>
+        <div class="card">
+            <img src="smartwatch.jpg" alt="Smartwatch">
+            <h3>Smartwatch</h3>
+            <p class="price">Em breve</p>
+        </div>
+        <div class="card">
+            <img src="liquidificador.jpg" alt="Liquidificador">
+            <h3>Liquidificador Portátil</h3>
+            <p class="price">Em breve</p>
+        </div>
     </div>
-    <div class="card">
-      <img src="smartwatch.jpg" alt="Smartwatch">
-      <h3>Smartwatch</h3>
-      <div class="soon">⏳ Em breve</div>
-    </div>
-    <div class="card">
-      <img src="liquidificador.jpg" alt="Liquidificador portátil">
-      <h3>Liquidificador Portátil</h3>
-      <div class="soon">⏳ Em breve</div>
-    </div>
-  </div>
+    <footer>📞 Atendimento via WhatsApp: +55 47 98850-6647</footer>
 </body>
 </html>
