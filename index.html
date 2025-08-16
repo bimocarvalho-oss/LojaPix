@@ -4,107 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento via PIX</title>
+    <title>Fone Bluetooth A6S - Promoção</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f0f4f8, #d9e4ec);
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #ffffff);
             margin: 0;
             padding: 0;
-            text-align: center;
             color: #333;
         }
         header {
-            background: linear-gradient(90deg, #28a745, #218838);
+            background: #00796b;
             color: white;
             padding: 20px;
+            text-align: center;
             font-size: 24px;
             font-weight: bold;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
+            margin: 20px auto;
             background: white;
-            margin: 30px auto;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        img {
-            max-width: 250px;
-            margin: 20px 0;
-            border: 2px solid #ddd;
+        .produto-img {
+            text-align: center;
+        }
+        .produto-img img {
+            max-width: 300px;
             border-radius: 10px;
-            background: white;
-            padding: 10px;
         }
-        .pix-info {
+        h2 {
+            color: #00796b;
+        }
+        .preco {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin: 20px 0;
+        }
+        .pix-info, .pix-code {
             background: #f8f9fa;
             padding: 15px;
-            margin-bottom: 20px;
             border-radius: 8px;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        .pix-code {
-            background: #f1f3f5;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            margin: 15px auto;
-            max-width: 500px;
+            margin: 15px 0;
+            text-align: center;
             word-break: break-all;
-            font-family: monospace;
-            font-size: 14px;
         }
         button {
-            background: linear-gradient(90deg, #28a745, #218838);
+            background: #00796b;
             color: white;
             border: none;
             padding: 12px 20px;
-            margin-top: 10px;
+            margin: 10px 0;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 16px;
             transition: 0.3s;
         }
         button:hover {
-            background: linear-gradient(90deg, #218838, #28a745);
+            background: #004d40;
         }
         .whatsapp-btn {
-            display: inline-block;
-            background: linear-gradient(90deg, #25D366, #1ebe5d);
+            display: block;
+            text-align: center;
+            background: #25d366;
             color: white;
-            padding: 14px 28px;
-            border-radius: 5px;
+            padding: 14px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 18px;
             margin-top: 20px;
-            transition: 0.3s;
         }
         .whatsapp-btn:hover {
-            background: linear-gradient(90deg, #1ebe5d, #25D366);
+            background: #1ebe5d;
         }
     </style>
 </head>
 <body>
-    <header>Pagamento via PIX</header>
+    <header>Promoção - Fone Bluetooth A6S</header>
     <div class="container">
+        <div class="produto-img">
+            <img src="fone_a6s.jpg" alt="Fone Bluetooth A6S">
+        </div>
+        <h2>Fone Bluetooth A6S - Som de Qualidade sem Fios</h2>
+        <p>Chegou o fone sem fio perfeito para o seu dia a dia! Com conexão rápida via Bluetooth, bateria de longa duração e design confortável, o <strong>Fone A6S</strong> é ideal para músicas, chamadas e jogos.</p>
+        
+        <div class="preco">🔥 Apenas R$ 49,90</div>
+        
+        <h3>Pagamento via Pix</h3>
         <div class="pix-info">
             <p><strong>Nome:</strong> Alexsander</p>
             <p><strong>Chave Pix:</strong> 12998022977</p>
             <p><strong>Valor:</strong> R$ 49,90</p>
         </div>
-        <p>Escaneie o QR Code abaixo para pagar:</p>
-        <img src="qrcode-pix.png" alt="QR Code PIX">
-        <h2>Ou copie o código Pix</h2>
+
+        <p>Escaneie o QR Code abaixo ou copie o código Pix:</p>
+        <div class="produto-img">
+            <img src="qrcode-pix.png" alt="QR Code Pix">
+        </div>
+
         <div class="pix-code" id="pixCode">
             00020101021226930014BR.GOV.BCB.PIX2571spi-qrcode.bancointer.com.br/spi/pj/v2/3271225d93504902b7ed9a572b82ce0e52040000530398654049.905802BR5901*6009SAO PAULO61080453206062070503***6304D604
         </div>
+
         <button onclick="copiarPix()">📋 Copiar código Pix</button>
-        
-        <br><br>
-        <a class="whatsapp-btn" href="https://wa.me/5547988506647?text=Ol%C3%A1!%20Segue%20o%20comprovante%20do%20pagamento%20via%20PIX%20de%20R$%2049,90." target="_blank">
+
+        <a class="whatsapp-btn" href="https://wa.me/5547988506647?text=Ol%C3%A1!%20Quero%20comprar%20o%20Fone%20Bluetooth%20A6S%20por%20R$49,90.%20Segue%20o%20comprovante%20do%20pagamento.">
             📲 Enviar comprovante no WhatsApp
         </a>
     </div>
