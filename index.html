@@ -9,10 +9,11 @@
     header { background: #28a745; color: #fff; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; }
     .banner { background: #ff4757; color: #fff; text-align: center; padding: 12px; font-size: 20px; font-weight: bold; }
     .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-    .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; }
-    .card img { width: 100%; max-height: 220px; object-fit: contain; border-radius: 10px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; transition: transform 0.2s; }
+    .card:hover { transform: scale(1.05); }
+    .card img { width: 100%; max-width: 250px; border-radius: 10px; margin-bottom: 10px; }
     .price { font-size: 20px; color: #28a745; font-weight: bold; margin: 10px 0; }
-    .btn { display: inline-block; padding: 10px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
+    .btn { display: inline-block; padding: 10px 18px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
     .btn:hover { background: #218838; }
     footer { text-align: center; padding: 15px; background: #333; color: #fff; margin-top: 20px; }
   </style>
@@ -21,7 +22,7 @@
   <header>🛒 Loja Pix</header>
   <div class="banner">🔥 Super Oferta: Fone Bluetooth A6S por apenas R$ 49,90 no Pix!</div>
 
-  <!-- Fones em destaque -->
+  <!-- Produtos -->
   <div class="container">
     <div class="card">
       <img src="fone1.jpg" alt="Fone A6S - Modelo 1">
@@ -29,12 +30,14 @@
       <p class="price">R$ 49,90</p>
       <a href="fone/index.html" class="btn">Comprar Agora</a>
     </div>
+
     <div class="card">
       <img src="fone2.jpg" alt="Fone A6S - Modelo 2">
       <h3>🎧 Fone A6S - Modelo 2</h3>
       <p class="price">R$ 49,90</p>
       <a href="fone/index.html" class="btn">Comprar Agora</a>
     </div>
+
     <div class="card">
       <img src="fone3.jpg" alt="Fone A6S - Modelo 3">
       <h3>🎧 Fone A6S - Modelo 3</h3>
@@ -51,7 +54,7 @@
       <p>Em breve</p>
     </div>
     <div class="card">
-      <img src="liquidificador.jpg" alt="Liquidificador Portátil">
+      <img src="liquidificador.jpg" alt="Liquidificador">
       <h3>🥤 Liquidificador Portátil</h3>
       <p>Em breve</p>
     </div>
@@ -60,5 +63,6 @@
   <footer>📞 Atendimento via WhatsApp: +55 47 98850-6647</footer>
 </body>
 </html>
+
 
 
