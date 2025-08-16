@@ -8,14 +8,12 @@
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f9; }
     header { background: #28a745; color: #fff; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; }
     .banner { background: #ff4757; color: #fff; text-align: center; padding: 12px; font-size: 20px; font-weight: bold; }
-    .highlight { text-align: center; padding: 30px; background: #fff; margin: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .highlight img { max-width: 350px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    .price { font-size: 24px; color: #28a745; font-weight: bold; margin: 15px 0; }
-    .btn { display: inline-block; padding: 12px 20px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; }
-    .btn:hover { background: #218838; }
-    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 20px; }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
     .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; }
-    .card img { width: 100%; border-radius: 10px; }
+    .card img { width: 100%; max-height: 220px; object-fit: contain; border-radius: 10px; }
+    .price { font-size: 20px; color: #28a745; font-weight: bold; margin: 10px 0; }
+    .btn { display: inline-block; padding: 10px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; }
+    .btn:hover { background: #218838; }
     footer { text-align: center; padding: 15px; background: #333; color: #fff; margin-top: 20px; }
   </style>
 </head>
@@ -23,38 +21,37 @@
   <header>🛒 Loja Pix</header>
   <div class="banner">🔥 Super Oferta: Fone Bluetooth A6S por apenas R$ 49,90 no Pix!</div>
 
-  <!-- Produto em destaque -->
-  <div class="highlight">
-    <h2>🎧 Fone Bluetooth A6S</h2>
-    <img src="fone1.jpg" alt="Fone A6S"
-         onerror="this.onerror=null;this.src='https://via.placeholder.com/350x350?text=Fone+A6S';">
-    <p class="price">R$ 49,90</p>
-    <a href="fone/index.html" class="btn">Comprar Agora</a>
+  <!-- Fones em destaque -->
+  <div class="container">
+    <div class="card">
+      <img src="fone1.jpg" alt="Fone A6S - Modelo 1">
+      <h3>🎧 Fone A6S - Modelo 1</h3>
+      <p class="price">R$ 49,90</p>
+      <a href="fone/index.html" class="btn">Comprar Agora</a>
+    </div>
+    <div class="card">
+      <img src="fone2.jpg" alt="Fone A6S - Modelo 2">
+      <h3>🎧 Fone A6S - Modelo 2</h3>
+      <p class="price">R$ 49,90</p>
+      <a href="fone/index.html" class="btn">Comprar Agora</a>
+    </div>
+    <div class="card">
+      <img src="fone3.jpg" alt="Fone A6S - Modelo 3">
+      <h3>🎧 Fone A6S - Modelo 3</h3>
+      <p class="price">R$ 49,90</p>
+      <a href="fone/index.html" class="btn">Comprar Agora</a>
+    </div>
   </div>
 
   <!-- Outros produtos -->
   <div class="container">
     <div class="card">
-      <img src="fone2.jpg" alt="Fone A6S 2"
-           onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=Fone+A6S+2';">
-      <h3>🎧 Fone A6S (Modelo 2)</h3>
-      <p>Em breve</p>
-    </div>
-    <div class="card">
-      <img src="fone3.jpg" alt="Fone A6S 3"
-           onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=Fone+A6S+3';">
-      <h3>🎧 Fone A6S (Modelo 3)</h3>
-      <p>Em breve</p>
-    </div>
-    <div class="card">
-      <img src="smartwatch.jpg" alt="Smartwatch"
-           onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=Smartwatch';">
+      <img src="smartwatch.jpg" alt="Smartwatch">
       <h3>⌚ Smartwatch</h3>
       <p>Em breve</p>
     </div>
     <div class="card">
-      <img src="liquidificador.jpg" alt="Liquidificador"
-           onerror="this.onerror=null;this.src='https://via.placeholder.com/300x300?text=Liquidificador';">
+      <img src="liquidificador.jpg" alt="Liquidificador Portátil">
       <h3>🥤 Liquidificador Portátil</h3>
       <p>Em breve</p>
     </div>
@@ -63,4 +60,5 @@
   <footer>📞 Atendimento via WhatsApp: +55 47 98850-6647</footer>
 </body>
 </html>
+
 
