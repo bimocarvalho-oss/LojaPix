@@ -3,42 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fone Bluetooth A6S - Loja Pix</title>
+  <title>Loja Pix - Vitrine</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { 
-      background: linear-gradient(135deg, #007bff, #00c6ff); 
-      color: #fff; padding: 20px; text-align: center; 
-      font-size: 24px; font-weight: bold; 
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    .container { max-width: 900px; margin: auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    h1 { text-align: center; color: #007bff; }
-    .product-img { display: block; margin: 20px auto; max-width: 300px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-    .price { font-size: 26px; text-align: center; color: #28a745; font-weight: bold; margin: 20px 0; }
-    .btn { display: inline-block; margin: 10px auto; padding: 14px 22px; background: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; transition: background 0.3s; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f9; }
+    header { background: linear-gradient(135deg, #007bff, #00c6ff); color: #fff; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; }
+    .banner { background: #ffc107; color: #333; text-align: center; padding: 12px; font-size: 20px; font-weight: bold; }
+    .highlight { text-align: center; padding: 30px; background: #fff; margin: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .highlight img { max-width: 350px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .price { font-size: 24px; color: #28a745; font-weight: bold; margin: 15px 0; }
+    .btn { display: inline-block; padding: 12px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 18px; }
     .btn:hover { background: #0056b3; }
-    .pix-box { text-align: center; margin: 20px auto; }
-    .pix-box img { max-width: 250px; border: 2px solid #eee; border-radius: 12px; padding: 8px; background: #fff; }
-    footer { text-align: center; padding: 20px; background: #333; color: #fff; margin-top: 30px; font-size: 14px; }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 20px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 15px; text-align: center; }
+    .card img { width: 100%; border-radius: 10px; }
+    footer { text-align: center; padding: 15px; background: #333; color: #fff; margin-top: 20px; }
   </style>
 </head>
 <body>
   <header>🛒 Loja Pix</header>
-  <div class="container">
-    <h1>🎧 Fone Bluetooth A6S</h1>
-    <img src="../fone1.jpg" alt="Fone A6S" class="product-img">
+  <div class="banner">🔥 Super Oferta: Fone Bluetooth A6S por apenas R$ 49,90 no Pix!</div>
+
+  <div class="highlight">
+    <h2>🎧 Fone Bluetooth A6S</h2>
+    <img src="fone1.jpg" alt="Fone A6S">
     <p class="price">R$ 49,90</p>
-    <div class="pix-box">
-      <p>📲 Pague via Pix usando a chave abaixo ou escaneando o QR Code:</p>
-      <p><strong>Chave Pix:</strong> 12998022977</p>
-      <img src="../qrcode-pix.png" alt="QR Code Pix">
+    <a href="fone/index.html" class="btn">Comprar Agora</a>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <img src="smartwatch.jpg" alt="Smartwatch">
+      <h3>⌚ Smartwatch</h3>
+      <p>Em breve</p>
     </div>
-    <div style="text-align: center;">
-      <a href="https://wa.me/5547988506647" class="btn">📞 Falar no WhatsApp</a>
+    <div class="card">
+      <img src="liquidificador.jpg" alt="Liquidificador">
+      <h3>🥤 Liquidificador Portátil</h3>
+      <p>Em breve</p>
     </div>
   </div>
-  <footer>✅ Compra 100% segura via Pix</footer>
+
+  <footer>📞 Atendimento via WhatsApp: +55 47 98850-6647</footer>
 </body>
 </html>
-
