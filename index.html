@@ -4,25 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento via Pix</title>
+    <title>Pagamento via PIX</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f8f8f8; margin: 0; padding: 0; }
-        .container { padding: 20px; }
-        h1 { color: #333; }
-        p { font-size: 18px; }
-        img { width: 300px; margin-top: 20px; }
-        .pix-info { background: #fff; padding: 15px; margin: 20px auto; width: fit-content; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            padding: 20px;
+        }
+        img {
+            max-width: 300px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            padding: 10px;
+        }
+        .pix-info {
+            background: #fff;
+            padding: 15px;
+            margin: 20px auto;
+            width: fit-content;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .pix-code {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
+    <header>Pagamento via PIX</header>
     <div class="container">
-        <h1>Pagamento via Pix</h1>
         <div class="pix-info">
             <p><strong>Nome:</strong> Alexsander</p>
             <p><strong>Chave Pix:</strong> 12998022977</p>
+            <p><strong>Valor:</strong> R$ 49,90</p>
         </div>
         <p>Escaneie o QR Code abaixo para pagar:</p>
-        <img src="pix_qrcode.png" alt="QR Code Pix">
+        <img src="qrcode-pix.png" alt="QR Code PIX">
+        <h2>Ou copie o código Pix</h2>
+        <div class="pix-code" id="pixCode">
+            00020101021226930014BR.GOV.BCB.PIX2571spi-qrcode.bancointer.com.br/spi/pj/v2/3271225d93504902b7ed9a572b82ce0e52040000530398654049.905802BR5901*6009SAO PAULO61080453206062070503***6304D604
+        </div>
+        <button onclick="copiarPix()">Copiar código Pix</button>
     </div>
+
+    <script>
+        function copiarPix() {
+            var codigo = document.getElementById("pixCode").innerText;
+            navigator.clipboard.writeText(codigo).then(function() {
+                alert("Código Pix copiado para a área de transferência!");
+            }, function() {
+                alert("Não foi possível copiar o código Pix.");
+            });
+        }
+    </script>
 </body>
 </html>
