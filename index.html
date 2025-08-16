@@ -7,24 +7,31 @@
     <title>Pagamento via PIX</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #d9e4ec);
             margin: 0;
             padding: 0;
             text-align: center;
             color: #333;
         }
         header {
-            background-color: #28a745;
+            background: linear-gradient(90deg, #28a745, #218838);
             color: white;
             padding: 20px;
             font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         .container {
+            max-width: 600px;
+            background: white;
+            margin: 30px auto;
             padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         img {
-            max-width: 300px;
+            max-width: 250px;
             margin: 20px 0;
             border: 2px solid #ddd;
             border-radius: 10px;
@@ -32,50 +39,51 @@
             padding: 10px;
         }
         .pix-info {
-            background: #fff;
+            background: #f8f9fa;
             padding: 15px;
-            margin: 20px auto;
-            width: fit-content;
+            margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            font-size: 16px;
+            line-height: 1.5;
         }
         .pix-code {
-            background: #fff;
-            padding: 10px;
+            background: #f1f3f5;
+            padding: 12px;
             border-radius: 8px;
             border: 1px solid #ccc;
-            margin: 20px auto;
-            width: 90%;
+            margin: 15px auto;
             max-width: 500px;
             word-break: break-all;
             font-family: monospace;
             font-size: 14px;
         }
         button {
-            background-color: #28a745;
+            background: linear-gradient(90deg, #28a745, #218838);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             margin-top: 10px;
             cursor: pointer;
             border-radius: 5px;
             font-size: 16px;
+            transition: 0.3s;
         }
         button:hover {
-            background-color: #218838;
+            background: linear-gradient(90deg, #218838, #28a745);
         }
         .whatsapp-btn {
             display: inline-block;
-            background-color: #25D366;
+            background: linear-gradient(90deg, #25D366, #1ebe5d);
             color: white;
-            padding: 12px 25px;
+            padding: 14px 28px;
             border-radius: 5px;
             text-decoration: none;
             font-size: 18px;
             margin-top: 20px;
+            transition: 0.3s;
         }
         .whatsapp-btn:hover {
-            background-color: #1ebe5d;
+            background: linear-gradient(90deg, #1ebe5d, #25D366);
         }
     </style>
 </head>
@@ -93,7 +101,7 @@
         <div class="pix-code" id="pixCode">
             00020101021226930014BR.GOV.BCB.PIX2571spi-qrcode.bancointer.com.br/spi/pj/v2/3271225d93504902b7ed9a572b82ce0e52040000530398654049.905802BR5901*6009SAO PAULO61080453206062070503***6304D604
         </div>
-        <button onclick="copiarPix()">Copiar código Pix</button>
+        <button onclick="copiarPix()">📋 Copiar código Pix</button>
         
         <br><br>
         <a class="whatsapp-btn" href="https://wa.me/5547988506647?text=Ol%C3%A1!%20Segue%20o%20comprovante%20do%20pagamento%20via%20PIX%20de%20R$%2049,90." target="_blank">
@@ -105,9 +113,9 @@
         function copiarPix() {
             var codigo = document.getElementById("pixCode").innerText;
             navigator.clipboard.writeText(codigo).then(function() {
-                alert("Código Pix copiado para a área de transferência!");
+                alert("✅ Código Pix copiado com sucesso!");
             }, function() {
-                alert("Não foi possível copiar o código Pix.");
+                alert("❌ Não foi possível copiar o código Pix.");
             });
         }
     </script>
