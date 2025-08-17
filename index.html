@@ -34,65 +34,78 @@
       color: #000;
     }
 
-    /* Banner */
+    /* Banner com texto */
+    .banner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
     .banner img {
-      width: 90vw;           /* usa 90% da largura da tela */
-      max-width: 1400px;     /* limite no desktop */
+      width: 100%;
       height: auto;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 20px;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .banner-texto {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
     /* Produtos em grid */
     .produtos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
       margin-top: 30px;
     }
 
     .card {
       background: #fff;
       border: 2px solid #a08152;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.2s;
     }
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
     }
 
-    /* Imagens maiores dentro dos cards */
+    /* Imagens dentro dos cards */
     .card img {
-      max-width: 240px;   /* aumentei o tamanho */
+      max-width: 180px;
       height: auto;
       display: block;
-      margin: 0 auto 15px auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      margin: 0 auto 10px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
     }
 
     .card h2 {
-      font-size: 1.4rem;
-      margin: 12px 0;
+      font-size: 1.3rem;
+      margin: 10px 0;
       color: #0b4934;
     }
 
     .card p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       margin: 8px 0;
       color: #000;
     }
 
     .preco {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       font-weight: bold;
       color: #a08152;
-      margin: 12px 0;
+      margin: 10px 0;
     }
 
     /* Botão */
@@ -100,25 +113,46 @@
       display: inline-block;
       background: #0b4934;
       color: #fff;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-size: 1.1rem;
+      padding: 12px 18px;
+      border-radius: 8px;
       text-decoration: none;
+      font-weight: bold;
       transition: background 0.3s;
     }
     .btn:hover {
       background: #a08152;
       color: #fff;
     }
+    .btn::before {
+      content: "💬 ";
+    }
 
-    /* Responsividade */
+    /* Seção confiança */
+    .confiança {
+      margin-top: 50px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .confiança h3 {
+      margin-bottom: 15px;
+      color: #a08152;
+    }
+    .confiança ul {
+      list-style: none;
+      font-size: 1.1rem;
+      color: #0b4934;
+    }
+    .confiança ul li {
+      margin: 10px 0;
+    }
+
+    /* Responsivo */
     @media (max-width: 768px) {
-      .banner img {
-        width: 100vw;
-        max-width: none;
-      }
-      .card img {
-        max-width: 200px; /* levemente menor no celular */
+      .banner-texto {
+        font-size: 1.2rem;
+        padding: 10px 15px;
       }
     }
   </style>
@@ -132,6 +166,7 @@
   <!-- Banner -->
   <div class="banner">
     <img src="imagens/fone-preto.png" alt="Oferta Especial Fone Preto no Pix">
+    <div class="banner-texto">🔥 Oferta Especial: R$ 49,90 via Pix só hoje!</div>
   </div>
 
   <!-- Produtos -->
@@ -192,6 +227,18 @@
       <a href="https://wa.me/554788506647?text=Quero%20a%20Mini%20Trituradora" class="btn">Quero esse produto</a>
     </div>
   </section>
+
+  <!-- Seção confiança -->
+  <section class="confiança">
+    <h3>✅ Compra Garantida</h3>
+    <ul>
+      <li>🔒 Pagamento 100% Seguro via Pix</li>
+      <li>⚡ Envio rápido para todo o Brasil</li>
+      <li>📱 Suporte direto no WhatsApp</li>
+      <li>🔄 7 dias de garantia de satisfação</li>
+    </ul>
+  </section>
 </body>
 </html>
+
 
