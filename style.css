@@ -89,3 +89,12 @@ header p {
   background: #a08152;
   color: #fff;
 }
+/* Ajuste das imagens dos produtos na página de detalhe */
+.produto-detalhe img {
+  max-width: 300px;   /* largura máxima */
+  height: auto;       /* mantém proporção */
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 20px auto; /* centraliza */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
