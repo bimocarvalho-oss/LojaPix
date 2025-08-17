@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LojaPix - Ofertas Especiais</title>
+  <title>Loja Pix</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* Reset simples */
@@ -21,17 +21,29 @@
       padding: 20px;
     }
 
-    /* Banner Oferta Especial */
-    .banner {
-      width: 100%;
-      max-width: 800px; /* largura máxima no PC */
-      margin: 0 auto 30px auto;
+    /* Header */
+    header {
+      margin-bottom: 30px;
     }
+    header h1 {
+      font-size: 2.5rem;
+      color: #a08152;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #000;
+    }
+
+    /* Banner */
     .banner img {
-      width: 100%;
+      width: 90vw;           /* usa 90% da largura da tela */
+      max-width: 1400px;     /* limite no desktop */
       height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
     /* Produtos em grid */
@@ -39,24 +51,24 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .card {
       background: #fff;
       border: 2px solid #a08152;
-      border-radius: 12px;
+      border-radius: 15px;
       padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.2s;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
     }
 
-    /* Imagens dos produtos - agora maiores */
+    /* Imagens maiores dentro dos cards */
     .card img {
-      max-width: 320px;   /* aumentado */
+      max-width: 240px;   /* aumentei o tamanho */
       height: auto;
       display: block;
       margin: 0 auto 15px auto;
@@ -66,18 +78,18 @@
 
     .card h2 {
       font-size: 1.4rem;
-      margin: 10px 0;
+      margin: 12px 0;
       color: #0b4934;
     }
 
     .card p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       margin: 8px 0;
       color: #000;
     }
 
     .preco {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: bold;
       color: #a08152;
       margin: 12px 0;
@@ -88,8 +100,9 @@
       display: inline-block;
       background: #0b4934;
       color: #fff;
-      padding: 12px 18px;
-      border-radius: 8px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 1.1rem;
       text-decoration: none;
       transition: background 0.3s;
     }
@@ -97,73 +110,87 @@
       background: #a08152;
       color: #fff;
     }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .banner img {
+        width: 100vw;
+        max-width: none;
+      }
+      .card img {
+        max-width: 200px; /* levemente menor no celular */
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Banner Oferta Especial -->
+  <header>
+    <h1>Loja Pix</h1>
+    <p>Produtos com pagamento rápido e seguro pelo Pix</p>
+  </header>
+
+  <!-- Banner -->
   <div class="banner">
-    <img src="imagens/banner-fone-preto.png" alt="Oferta Especial Fone Preto no Pix">
+    <img src="imagens/fone-preto.png" alt="Oferta Especial Fone Preto no Pix">
   </div>
 
-  <!-- Lista de produtos -->
+  <!-- Produtos -->
   <section class="produtos">
-
     <div class="card">
       <img src="imagens/fone-preto.png" alt="Fone Preto">
       <h2>Fone Preto</h2>
-      <p>Bluetooth 5.0 com cancelamento de ruído</p>
+      <p>Qualidade de som incrível com conexão bluetooth.</p>
       <p class="preco">R$ 99,90</p>
-      <a class="btn" href="https://wa.me/554788506647?text=Quero+o+Fone+Preto">Comprar no WhatsApp</a>
+      <a href="https://wa.me/554788506647?text=Quero%20o%20Fone%20Preto" class="btn">Quero esse produto</a>
     </div>
 
     <div class="card">
       <img src="imagens/fone-branco.png" alt="Fone Branco">
       <h2>Fone Branco</h2>
-      <p>Design moderno e som de alta qualidade</p>
-      <p class="preco">R$ 99,90</p>
-      <a class="btn" href="https://wa.me/554788506647?text=Quero+o+Fone+Branco">Comprar no WhatsApp</a>
+      <p>Design moderno e bateria de longa duração.</p>
+      <p class="preco">R$ 109,90</p>
+      <a href="https://wa.me/554788506647?text=Quero%20o%20Fone%20Branco" class="btn">Quero esse produto</a>
     </div>
 
     <div class="card">
       <img src="imagens/fone-rosa.png" alt="Fone Rosa">
       <h2>Fone Rosa</h2>
-      <p>Estilo elegante com bateria duradoura</p>
-      <p class="preco">R$ 99,90</p>
-      <a class="btn" href="https://wa.me/554788506647?text=Quero+o+Fone+Rosa">Comprar no WhatsApp</a>
-    </div>
-
-    <div class="card">
-      <img src="imagens/smartwatch.jpg" alt="Smartwatch">
-      <h2>Smartwatch</h2>
-      <p>Controle sua saúde e receba notificações</p>
-      <p class="preco">R$ 199,90</p>
-      <a class="btn" href="https://wa.me/554788506647?text=Quero+o+Smartwatch">Comprar no WhatsApp</a>
+      <p>Estilo e potência no mesmo produto.</p>
+      <p class="preco">R$ 119,90</p>
+      <a href="https://wa.me/554788506647?text=Quero%20o%20Fone%20Rosa" class="btn">Quero esse produto</a>
     </div>
 
     <div class="card">
       <img src="imagens/micro-ondas.png" alt="Micro-ondas">
       <h2>Micro-ondas</h2>
-      <p>Praticidade e rapidez na sua cozinha</p>
+      <p>Praticidade e rapidez no seu dia a dia.</p>
       <p class="preco">R$ 499,90</p>
-      <a class="btn" href="https://wa.me/554788506647?text=Quero+o+Micro-ondas">Comprar no WhatsApp</a>
+      <a href="https://wa.me/554788506647?text=Quero%20o%20Micro-ondas" class="btn">Quero esse produto</a>
     </div>
 
     <div class="card">
       <img src="imagens/liquidificador1.jpg" alt="Liquidificador">
       <h2>Liquidificador</h2>
-      <p>Potência e durabilidade para receitas</p>
-      <p class="preco">R$ 149,90</p>
-      <a class="btn" href="https://wa.me/554788506647?text=Quero+o+Liquidificador">Comprar no WhatsApp</a>
+      <p>Potente e fácil de usar para receitas incríveis.</p>
+      <p class="preco">R$ 199,90</p>
+      <a href="https://wa.me/554788506647?text=Quero%20o%20Liquidificador" class="btn">Quero esse produto</a>
     </div>
 
     <div class="card">
-      <img src="imagens/mini-trituradora.png" alt="Mini Trituradora">
-      <h2>Mini Trituradora</h2>
-      <p>Praticidade e eficiência na sua cozinha</p>
-      <p class="preco">R$ 149,90</p>
-      <a class="btn" href="https://wa.me/554788506647?text=Quero+a+Mini+Trituradora">Comprar no WhatsApp</a>
+      <img src="imagens/smartwatch.jpg" alt="Smartwatch">
+      <h2>Smartwatch</h2>
+      <p>Conecte-se e acompanhe sua saúde no pulso.</p>
+      <p class="preco">R$ 299,90</p>
+      <a href="https://wa.me/554788506647?text=Quero%20o%20Smartwatch" class="btn">Quero esse produto</a>
     </div>
 
+    <div class="card">
+      <img src="imagens/liquidificador2.webp" alt="Mini Trituradora">
+      <h2>Mini Trituradora</h2>
+      <p>Compacta e prática para facilitar sua cozinha.</p>
+      <p class="preco">R$ 149,90</p>
+      <a href="https://wa.me/554788506647?text=Quero%20a%20Mini%20Trituradora" class="btn">Quero esse produto</a>
+    </div>
   </section>
 </body>
 </html>
