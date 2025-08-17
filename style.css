@@ -46,9 +46,14 @@ header p {
   transform: translateY(-5px);
 }
 
+/* Imagens dentro dos cards */
 .card img {
-  max-width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
 }
 
 .card h2 {
