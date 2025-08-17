@@ -109,6 +109,13 @@ header p {
   object-fit: contain;   /* mostra imagem inteira */
 }
 
-
-
+/* Texto da oferta abaixo do banner */
+.banner-oferta {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #a08152;  /* dourado igual ao preço */
+  margin-top: 10px;
 }
+
+
+
