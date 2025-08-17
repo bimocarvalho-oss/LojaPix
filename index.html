@@ -33,15 +33,20 @@
       font-size: 1.2rem;
       color: #000;
     }
+.banner img {
+  width: 80vw;           /* usa 80% da largura da janela */
+  max-width: 1200px;     /* limite máximo no desktop */
+  height: auto;
+  object-fit: contain;   /* mantém a imagem inteira */
+  display: block;
+  margin: 0 auto 20px;
+}
 
-    /* Banner */
-    .banner img {
-      width: 100%;           /* ocupa toda a largura disponível */
-      max-width: 700px;      /* limite no PC */
-      height: auto;          /* mantém proporção */
-      display: block;
-      margin: 0 auto 20px;   /* centraliza e dá espaço */
-      object-fit: contain;   /* garante imagem inteira */
+/* Ajustes para telas menores que 768px */
+@media (max-width: 768px) {
+  .banner img {
+    width: 100vw;        /* ocupa toda a largura do celular */
+    max-width: none;     /* remove o limite para mobile */
     }
 
     /* Produtos em grid */
