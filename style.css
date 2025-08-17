@@ -101,14 +101,14 @@ header p {
 }
 /* Ajuste do banner */
 .banner img {
-  width: 100%;
-  max-width: 300px;   /* limita a largura no PC */
-  height: auto;
-  max-height: 400px;   /* altura máxima controlada */
-  object-fit: contain; /* não corta a frase */
+  width: 100%;           /* ocupa toda a largura disponível */
+  max-width: 700px;      /* limite no PC para não ficar gigante */
+  height: auto;          /* mantém proporção */
   display: block;
-  margin: 0 auto 20px;      /* centraliza */
+  margin: 0 auto 20px;   /* centraliza e dá respiro */
+  object-fit: contain;   /* mostra imagem inteira */
 }
+
 
 
 }
