@@ -1,56 +1,112 @@
-<!DOCTYPE html>
+import os
+import zipfile
+
+# Criar estrutura temporária da loja
+base_path = "/mnt/data/LojaPix"
+images_path = os.path.join(base_path, "imagens")
+os.makedirs(images_path, exist_ok=True)
+
+# Criar o index.html atualizado
+index_html_content = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoldenPixStore</title>
-  <link rel="stylesheet" href="style.css">
+  <title>LojaPix - Sua Loja Online</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #111; color: #fff; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 22px; }
+    nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; }
+    .banner { width: 100%; overflow: hidden; }
+    .banner img { width: 100%; max-height: 400px; object-fit: cover; }
+    h2 { text-align: center; margin: 30px 0 20px; }
+    .produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .produto { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+    .produto img { max-width: 100%; border-radius: 10px; }
+    .produto h3 { margin: 10px 0; }
+    .produto p { color: green; font-weight: bold; margin: 10px 0; }
+    .btn { display: inline-block; padding: 10px 15px; background: #25d366; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    footer { background: #111; color: #fff; text-align: center; padding: 20px; margin-top: 30px; }
+    footer p { margin: 5px 0; }
+  </style>
 </head>
 <body>
-  <!-- Header -->
+
   <header>
-    <img src="imagens/logo.png" alt="GoldenPixStore Logo" width="150">
-    <h1>GoldenPixStore</h1>
-    <p>✨ Luxo e Exclusividade em cada compra ✨</p>
+    <h1>LojaPix</h1>
+    <nav>
+      <a href="#fones">Fones</a>
+      <a href="#eletro">Eletrodomésticos</a>
+      <a href="https://wa.me/5547988596647" target="_blank">WhatsApp</a>
+    </nav>
   </header>
 
-  <!-- Produtos -->
-  <section class="produtos">
+  <!-- Banner Carrossel Simples -->
+  <div class="banner">
+    <img src="imagens/fone-preto.png" alt="Fone Preto">
+  </div>
 
-    <div class="card">
-      <img src="imagens/fone1.webp" alt="Fone Bluetooth A6S">
-      <h2>🎧 Fone Bluetooth A6S</h2>
-      <p class="preco">R$ 49,90</p>
-      <p>Oferta Exclusiva Luxo</p>
-      <a href="fone1.html" class="btn">Ver mais</a>
-
+  <!-- Fones -->
+  <h2 id="fones">🎧 Fones de Ouvido</h2>
+  <div class="produtos">
+    <div class="produto">
+      <img src="imagens/fone-preto.png" alt="Fone Preto">
+      <h3>Fone Bluetooth Preto</h3>
+      <p>R$ 79,90</p>
+      <a href="https://wa.me/5547988596647" class="btn">Comprar no WhatsApp</a>
     </div>
-
-    <div class="card">
-      <img src="imagens/fone2.webp" alt="Fone Premium">
-      <h2>🎧 Fone Premium</h2>
-      <p class="preco">R$ 79,90</p>
-      <p>Oferta Exclusiva Luxo</p>
-      <a href="fone2.html" class="btn">Ver mais</a>
+    <div class="produto">
+      <img src="imagens/fone-branco.png" alt="Fone Branco">
+      <h3>Fone Bluetooth Branco</h3>
+      <p>R$ 79,90</p>
+      <a href="https://wa.me/5547988596647" class="btn">Comprar no WhatsApp</a>
     </div>
-
-    <div class="card">
-      <img src="imagens/liquidificador1.jpg" alt="Liquidificador Portátil">
-      <h2>🥤 Liquidificador Portátil</h2>
-      <p class="preco">R$ 89,90</p>
-      <p>Oferta Exclusiva Luxo</p>
-      <a href="liquidificador.html" class="btn">Ver mais</a>
+    <div class="produto">
+      <img src="imagens/fone-rosa.png" alt="Fone Rosa">
+      <h3>Fone Bluetooth Rosa</h3>
+      <p>R$ 79,90</p>
+      <a href="https://wa.me/5547988596647" class="btn">Comprar no WhatsApp</a>
     </div>
+  </div>
 
-    <div class="card">
-      <img src="imagens/smartwatch.jpg" alt="Smartwatch">
-      <h2>⌚ Smartwatch</h2>
-      <p class="preco">Preço sob consulta</p>
-      <p>Oferta Exclusiva Luxo</p>
-      <a href="smartwatch.html" class="btn">Ver mais</a>
+  <!-- Eletrodomésticos -->
+  <h2 id="eletro">🍳 Eletrodomésticos</h2>
+  <div class="produtos">
+    <div class="produto">
+      <img src="imagens/microondas.png" alt="Micro-ondas">
+      <h3>Micro-ondas Moderno</h3>
+      <p>R$ 499,90</p>
+      <a href="https://wa.me/5547988596647" class="btn">Comprar no WhatsApp</a>
     </div>
+    <div class="produto">
+      <img src="imagens/trituradora.png" alt="Mini Trituradora">
+      <h3>Mini Trituradora Elétrica</h3>
+      <p>R$ 149,90</p>
+      <a href="https://wa.me/5547988596647" class="btn">Comprar no WhatsApp</a>
+    </div>
+  </div>
 
-  </section>
+  <footer>
+    <p>🚚 Frete grátis para todo o Brasil</p>
+    <p>💳 5% de desconto no Pix</p>
+    <p>📱 Atendimento via WhatsApp: (47) 98859-6647</p>
+  </footer>
+
 </body>
 </html>
+"""
+
+with open(os.path.join(base_path, "index.html"), "w", encoding="utf-8") as f:
+    f.write(index_html_content)
+
+# Criar o arquivo ZIP
+zip_path = "/mnt/data/LojaPix.zip"
+with zipfile.ZipFile(zip_path, 'w') as zipf:
+    # Adicionar index.html
+    zipf.write(os.path.join(base_path, "index.html"), "index.html")
+    # Pastas de imagens ficam vazias por enquanto (usuário deve colocar manualmente)
+    zipf.writestr("imagens/", "")
+
+zip_path
 
