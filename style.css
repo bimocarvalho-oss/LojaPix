@@ -102,12 +102,12 @@ header p {
 /* Ajuste do banner */
 .banner img {
   width: 100%;
-  max-width: 1000px;   /* limita a largura no PC */
+  max-width: 700px;   /* limita a largura no PC */
   height: auto;
   max-height: 400px;   /* altura máxima controlada */
   object-fit: contain; /* não corta a frase */
   display: block;
-  margin: 0 auto;      /* centraliza */
+  margin: 0 auto 20px;      /* centraliza */
 }
 
 
