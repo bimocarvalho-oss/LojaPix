@@ -86,18 +86,5 @@
 
 </body>
 </html>
-"""
 
-with open(os.path.join(base_path, "index.html"), "w", encoding="utf-8") as f:
-    f.write(index_html_content)
-
-# Criar o arquivo ZIP
-zip_path = "/mnt/data/LojaPix.zip"
-with zipfile.ZipFile(zip_path, 'w') as zipf:
-    # Adicionar index.html
-    zipf.write(os.path.join(base_path, "index.html"), "index.html")
-    # Pastas de imagens ficam vazias por enquanto (usuário deve colocar manualmente)
-    zipf.writestr("imagens/", "")
-
-zip_path
 
