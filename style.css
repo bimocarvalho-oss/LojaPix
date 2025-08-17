@@ -1,54 +1,69 @@
 body {
   font-family: Arial, sans-serif;
+  background: #ece1cf;
+  color: #000;
   margin: 0;
-  background-color: #ece1cf;
-  color: #0b4934;
+  padding: 0;
 }
+
 header {
   text-align: center;
-  padding: 20px;
-  background: #a08152;
+  background: #0b4934;
   color: #fff;
+  padding: 20px;
 }
-.logo {
+
+header .logo {
   max-width: 120px;
 }
+
+.slogan {
+  font-style: italic;
+  color: #a08152;
+}
+
 .produtos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
 }
-.produto {
+
+.card {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
   padding: 15px;
+  text-align: center;
 }
-.produto img {
+
+.card img {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
+
 .preco {
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: bold;
+  color: #0b4934;
+}
+
+.oferta {
   color: #a08152;
+  font-weight: bold;
 }
-.tag {
-  font-size: 14px;
-  background: #0b4934;
-  color: #fff;
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-a {
+
+.btn {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 15px;
   background: #a08152;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0b4934;
 }
