@@ -3,23 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liquidificador Portátil - GoldenPixStore</title>
+  <title>Mini Triturador Elétrico - GoldenPixStore</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .produto-detalhe { display:flex;justify-content:center;align-items:center;padding:30px; }
+    .produto-detalhe .card { max-width:380px;width:100%;background:#fff;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,0.15);padding:20px;text-align:center; }
+    .produto-detalhe img { max-width:220px;margin:0 auto 15px;display:block;border-radius:12px; }
+    .produto-detalhe h2 { font-size:1.5rem;margin-bottom:10px; }
+    .produto-detalhe .preco { font-size:1.3rem;font-weight:bold;color:#e63946;margin:10px 0 20px; }
+    .btn { display:inline-block;background:#25d366;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;font-weight:bold;transition:0.3s; }
+    .btn:hover { background:#1da851; }
+  </style>
 </head>
 <body>
   <header>
-    <img src="imagens/logo.png" alt="GoldenPixStore Logo" width="150">
     <h1>GoldenPixStore</h1>
     <p>✨ Luxo e Exclusividade em cada compra ✨</p>
   </header>
 
-  <main>
+  <main class="produto-detalhe">
     <div class="card">
-      <img src="imagens/liquidificador1.jpg" alt="Liquidificador Portátil">
-      <h2>🥤 Liquidificador Portátil</h2>
-      <p class="preco">R$ 89,90</p>
-      <p>Oferta Exclusiva Luxo</p>
-      <a href="https://wa.me/5547988506647?text=Olá! Tenho interesse no Liquidificador Portátil." target="_blank" class="btn">💬 Falar no WhatsApp</a>
+      <img src="imagens/liquidificador1.jpg" alt="Mini Triturador Elétrico">
+      <h2>⚡ Mini Triturador Elétrico</h2>
+      <p>Praticidade na cozinha para triturar alho, cebola e temperos.</p>
+      <p class="preco">R$ 49,90</p>
+      <a href="https://wa.me/5547988506647?text=Olá! Tenho interesse no Mini Triturador Elétrico."
+         target="_blank" class="btn">💬 Falar no WhatsApp</a>
     </div>
   </main>
 </body>
