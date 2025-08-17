@@ -33,20 +33,30 @@
       font-size: 1.2rem;
       color: #000;
     }
-.banner img {
-  width: 80vw;           /* usa 80% da largura da janela */
-  max-width: 1200px;     /* limite máximo no desktop */
-  height: auto;
-  object-fit: contain;   /* mantém a imagem inteira */
-  display: block;
-  margin: 0 auto 20px;
-}
 
-/* Ajustes para telas menores que 768px */
-@media (max-width: 768px) {
-  .banner img {
-    width: 100vw;        /* ocupa toda a largura do celular */
-    max-width: none;     /* remove o limite para mobile */
+    /* Banner com texto */
+    .banner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+    .banner img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .banner-texto {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
     /* Produtos em grid */
@@ -103,14 +113,47 @@
       display: inline-block;
       background: #0b4934;
       color: #fff;
-      padding: 10px 15px;
+      padding: 12px 18px;
       border-radius: 8px;
       text-decoration: none;
+      font-weight: bold;
       transition: background 0.3s;
     }
     .btn:hover {
       background: #a08152;
       color: #fff;
+    }
+    .btn::before {
+      content: "💬 ";
+    }
+
+    /* Seção confiança */
+    .confiança {
+      margin-top: 50px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .confiança h3 {
+      margin-bottom: 15px;
+      color: #a08152;
+    }
+    .confiança ul {
+      list-style: none;
+      font-size: 1.1rem;
+      color: #0b4934;
+    }
+    .confiança ul li {
+      margin: 10px 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .banner-texto {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+      }
     }
   </style>
 </head>
@@ -123,6 +166,7 @@
   <!-- Banner -->
   <div class="banner">
     <img src="imagens/fone-preto.png" alt="Oferta Especial Fone Preto no Pix">
+    <div class="banner-texto">🔥 Oferta Especial: R$ 49,90 via Pix só hoje!</div>
   </div>
 
   <!-- Produtos -->
@@ -183,8 +227,20 @@
       <a href="https://wa.me/554788506647?text=Quero%20a%20Mini%20Trituradora" class="btn">Quero esse produto</a>
     </div>
   </section>
+
+  <!-- Seção confiança -->
+  <section class="confiança">
+    <h3>✅ Compra Garantida</h3>
+    <ul>
+      <li>🔒 Pagamento 100% Seguro via Pix</li>
+      <li>⚡ Envio rápido para todo o Brasil</li>
+      <li>📱 Suporte direto no WhatsApp</li>
+      <li>🔄 7 dias de garantia de satisfação</li>
+    </ul>
+  </section>
 </body>
 </html>
+
 
 
 
