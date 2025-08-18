@@ -4,227 +4,223 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoldenPi PixStore</title>
-
-  <!-- Fonte Libre Baskerville -->
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #ffffff;
-      color: #333;
+      background: #111;
+      color: #fff;
     }
-
     header {
       text-align: center;
       padding: 20px;
-      background: #ffc107;
-      color: #000;
+      background: #000;
     }
-
-    header h1 {
-      margin: 10px 0 5px;
+    header img {
+      max-width: 180px;
     }
-
-    .subtitulo {
-      font-family: "Libre Baskerville", serif;
-      font-size: 1.2rem;
+    header h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 18px;
       font-weight: 400;
-      color: #000;
-      margin-top: -5px;
-      font-style: italic;
+      margin-top: 10px;
+      color: #f0c040;
     }
-
     .produtos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 20px;
-      justify-items: center;
     }
-
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .produto {
+      background: #1a1a1a;
+      border-radius: 12px;
       padding: 15px;
-      max-width: 250px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-
-    .card img {
+    .produto img {
       max-width: 100%;
-      border-radius: 8px;
-    }
-
-    .preco {
-      font-weight: bold;
-      margin: 10px 0;
-      color: #000;
-    }
-
-    .slogan {
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #555;
-      margin: 8px 0;
-    }
-
-    .depoimento {
-      margin-top: 15px;
-      font-size: 0.85rem;
-      color: #444;
-    }
-
-    .depoimento img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      border-radius: 10px;
+      height: 200px;
       object-fit: cover;
-      margin-bottom: 5px;
     }
-
-    .btn {
+    .produto h3 {
+      margin: 10px 0;
+      color: #f0c040;
+    }
+    .produto p {
+      font-size: 14px;
+      color: #ccc;
+      min-height: 40px;
+    }
+    .preco {
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      margin: 10px 0;
+    }
+    .whatsapp-btn {
       display: inline-block;
-      background: #000;
-      color: #ffc107;
+      background: #25d366;
+      color: #fff;
       padding: 10px 15px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
-
-    .btn:hover {
-      background: #333;
+    .whatsapp-btn:hover {
+      background: #1ebc57;
     }
-
-    .beneficios {
-      background: #f8f9fa;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .beneficios ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    .slogans {
+      background: #000;
+      padding: 30px 20px;
       text-align: center;
     }
-
-    .beneficios li {
-      font-size: 1rem;
-      margin: 10px 0;
+    .slogans h2 {
+      color: #f0c040;
+      margin-bottom: 20px;
+    }
+    .slogan {
+      display: inline-block;
+      width: 250px;
+      margin: 10px;
+      text-align: center;
+    }
+    .slogan img {
+      width: 100%;
+      border-radius: 12px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .slogan p {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    .garantias {
+      margin-top: 20px;
+      font-size: 15px;
+      color: #f0c040;
+      line-height: 1.8;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="/imagens/logo.png" alt="GoldenPi PixStore" style="max-width:180px; margin-bottom:10px;">
-    <h1>GoldenPi PixStore</h1>
-    <p class="subtitulo">Ofertas especiais direto no Pix!</p>
+    <img src="imagens/logo.png" alt="GoldenPi Logo">
+    <h2>Elegância e Tecnologia ao Seu Alcance</h2>
   </header>
 
   <section class="produtos">
-    <div class="card">
-      <img src="/imagens/fone-preto.jpg" alt="Fone Bluetooth">
-      <h3>Fone Bluetooth</h3>
-      <p class="preco">R$ 79,90</p>
-      <p class="slogan">“Uso todos os dias na academia, nunca falha!”</p>
-      <div class="depoimento">
-        <img src="/imagens/cliente1.jpg" alt="Cliente feliz">
-        <p>Maria, 27 anos</p>
-      </div>
-      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    <div class="produto">
+      <img src="imagens/fone_preto.webp" alt="Fone Preto">
+      <h3>Fone Bluetooth Preto</h3>
+      <p>Som de alta qualidade e bateria de longa duração.</p>
+      <div class="preco">R$ 99,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
     </div>
 
-    <div class="card">
-      <img src="/imagens/trituradora.jpg" alt="Mini Triturador">
-      <h3>Mini Triturador</h3>
-      <p class="preco">R$ 49,90</p>
-      <p class="slogan">“Facilitou minha vida na cozinha, super prático.”</p>
-      <div class="depoimento">
-        <img src="/imagens/cliente2.jpg" alt="Cliente feliz">
-        <p>João, 35 anos</p>
-      </div>
-      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    <div class="produto">
+      <img src="imagens/fone_branco.webp" alt="Fone Branco">
+      <h3>Fone Bluetooth Branco</h3>
+      <p>Design moderno e confortável para o dia a dia.</p>
+      <div class="preco">R$ 99,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
     </div>
 
-    <div class="card">
-      <img src="/imagens/smartwatch.jpg" alt="Smartwatch">
-      <h3>Smartwatch</h3>
-      <p class="preco">R$ 129,90</p>
-      <p class="slogan">“Me ajuda a controlar meus treinos e saúde.”</p>
-      <div class="depoimento">
-        <img src="/imagens/cliente3.jpg" alt="Cliente feliz">
-        <p>Ana, 30 anos</p>
-      </div>
-      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    <div class="produto">
+      <img src="imagens/fone_rosa.webp" alt="Fone Rosa">
+      <h3>Fone Bluetooth Rosa</h3>
+      <p>Estilo único e desempenho incrível.</p>
+      <div class="preco">R$ 99,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
     </div>
 
-    <div class="card">
-      <img src="/imagens/luminaria.jpg" alt="Luminária 3D Lua">
-      <h3>Luminária 3D Lua</h3>
-      <p class="preco">R$ 59,90</p>
-      <p class="slogan">“Deixa meu quarto super aconchegante à noite.”</p>
-      <div class="depoimento">
-        <img src="/imagens/cliente4.jpg" alt="Cliente feliz">
-        <p>Lucas, 22 anos</p>
-      </div>
-      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    <div class="produto">
+      <img src="imagens/triturador.webp" alt="Mini Triturador">
+      <h3>Mini Triturador Portátil</h3>
+      <p>Prepare sucos e vitaminas em qualquer lugar.</p>
+      <div class="preco">R$ 129,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
     </div>
 
-    <div class="card">
-      <img src="/imagens/escova.jpg" alt="Escova Alisadora">
+    <div class="produto">
+      <img src="imagens/escova.webp" alt="Escova Alisadora">
       <h3>Escova Alisadora</h3>
-      <p class="preco">R$ 89,90</p>
-      <p class="slogan">“Meu cabelo fica liso em minutos, amei!”</p>
-      <div class="depoimento">
-        <img src="/imagens/cliente5.jpg" alt="Cliente feliz">
-        <p>Fernanda, 25 anos</p>
-      </div>
-      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+      <p>Deixe seus cabelos lisos e brilhantes em minutos.</p>
+      <div class="preco">R$ 149,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
     </div>
 
-    <div class="card">
-      <img src="/imagens/camera.jpg" alt="Câmera Wi-Fi">
-      <h3>Câmera Wi-Fi</h3>
-      <p class="preco">R$ 159,90</p>
-      <p class="slogan">“Agora consigo vigiar minha casa pelo celular.”</p>
-      <div class="depoimento">
-        <img src="/imagens/cliente6.jpg" alt="Cliente feliz">
-        <p>Ricardo, 40 anos</p>
-      </div>
-      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    <div class="produto">
+      <img src="imagens/luminaria.webp" alt="Luminária 3D">
+      <h3>Luminária 3D Lua</h3>
+      <p>Um toque mágico na decoração da sua casa.</p>
+      <div class="preco">R$ 89,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
     </div>
 
-    <div class="card">
-      <img src="/imagens/massageador.jpg" alt="Massageador Elétrico">
+    <div class="produto">
+      <img src="imagens/camera.webp" alt="Câmera Wi-Fi">
+      <h3>Câmera Wi-Fi 360°</h3>
+      <p>Segurança e monitoramento em tempo real.</p>
+      <div class="preco">R$ 179,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
+    </div>
+
+    <div class="produto">
+      <img src="imagens/massageador.webp" alt="Massageador">
       <h3>Massageador Elétrico</h3>
-      <p class="preco">R$ 119,90</p>
-      <p class="slogan">“Uso depois do trabalho e relaxo na hora.”</p>
-      <div class="depoimento">
-        <img src="/imagens/cliente7.jpg" alt="Cliente feliz">
-        <p>Paula, 33 anos</p>
-      </div>
-      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+      <p>Relaxe e alivie tensões musculares em minutos.</p>
+      <div class="preco">R$ 159,90</div>
+      <a class="whatsapp-btn" href="https://wa.me/5547988506647">Comprar no WhatsApp</a>
     </div>
   </section>
 
-  <section class="beneficios">
-    <ul>
-      <li>✅ Compra Garantida</li>
-      <li>🔒 Pagamento 100% Seguro via Pix</li>
-      <li>⚡ Envio rápido para todo o Brasil</li>
-      <li>📱 Suporte direto no WhatsApp</li>
-      <li>🔄 7 dias de garantia de satisfação</li>
-    </ul>
+  <section class="slogans">
+    <h2>Clientes Satisfeitos</h2>
+    <div class="slogan">
+      <img src="imagens/cliente1.jpg" alt="Cliente usando fone">
+      <p>"O fone é perfeito para academia, não vivo sem!" – Marina S.</p>
+    </div>
+    <div class="slogan">
+      <img src="imagens/cliente2.jpg" alt="Cliente usando escova">
+      <p>"Minha escova alisadora salvou minha rotina!" – Juliana P.</p>
+    </div>
+    <div class="slogan">
+      <img src="imagens/cliente3.jpg" alt="Cliente usando luminária">
+      <p>"A luminária 3D deixou meu quarto incrível!" – Lucas M.</p>
+    </div>
+    <div class="slogan">
+      <img src="imagens/cliente4.jpg" alt="Cliente usando massageador">
+      <p>"O massageador virou meu aliado depois do trabalho." – Felipe R.</p>
+    </div>
   </section>
 
+  <footer>
+    <p>© 2025 GoldenPi PixStore - Todos os direitos reservados.</p>
+    <div class="garantias">
+      ✅ Compra Garantida <br>
+      🔒 Pagamento 100% Seguro via Pix <br>
+      ⚡ Envio rápido para todo o Brasil <br>
+      📱 Suporte direto no WhatsApp <br>
+      🔄 7 dias de garantia de satisfação
+    </div>
+  </footer>
 </body>
 </html>
 
