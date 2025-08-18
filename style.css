@@ -121,7 +121,19 @@ header p {
   color: #a08152;
   margin-top: 10px;
 }
-
+.guarantee {
+  text-align: center;       /* centraliza o texto */
+  margin: 30px auto;        /* dá espaço em cima e embaixo */
+  padding: 15px;            /* respiro interno */
+  background: #fff3e0;      /* cor de fundo leve */
+  border-radius: 12px;      /* cantos arredondados */
+  max-width: 600px;         /* limita largura para não ficar gigante */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra suave */
+}
+.guarantee p {
+  margin: 8px 0;
+  font-size: 16px;
+ } 
 /* --- RESPONSIVO (Celular) --- */
 @media (max-width: 768px) {
   .banner img {
