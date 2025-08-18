@@ -4,16 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoldenPi PixStore</title>
-  <link rel="stylesheet" href="style.css?v=2">
+
+  <!-- Fonte Libre Baskerville -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
   <style>
-    /* Forçar centralização dos cards */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #ffc107;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+    }
+
+    /* Estilo da frase abaixo do logo (somente subtítulo) */
+    .subtitulo {
+      font-family: "Libre Baskerville", serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #ffc107;
+      margin-top: -5px;
+      font-style: italic;
+    }
+
+    /* Produtos */
     .produtos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 20px;
+      justify-items: center;
     }
+
     .card {
       background: #fff;
       border-radius: 10px;
@@ -22,14 +55,25 @@
       max-width: 250px;
       text-align: center;
     }
+
     .card img {
       max-width: 100%;
       border-radius: 8px;
     }
+
     .preco {
       font-weight: bold;
       margin: 10px 0;
+      color: #000;
     }
+
+    .slogan {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #555;
+      margin: 8px 0;
+    }
+
     .btn {
       display: inline-block;
       background: #ffc107;
@@ -39,105 +83,79 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     .btn:hover {
       background: #e0a800;
     }
   </style>
 </head>
 <body>
+
   <header>
     <img src="golden.png" alt="GoldenPi PixStore" style="max-width:180px; margin-bottom:10px;">
     <h1>GoldenPi PixStore</h1>
-    <p>Ofertas especiais direto no Pix!</p>
+    <p class="subtitulo">Ofertas especiais direto no Pix!</p>
   </header>
 
-  <!-- Banner -->
-  <div class="banner">
-    <img src="imagens/banner/banner-fone-preto.png" alt="Fone Preto em Oferta">
-    <p class="banner-oferta">🔥 Oferta Especial 🔥</p>
-  </div>
-
-  <!-- Produtos -->
   <section class="produtos">
-
     <div class="card">
-      <img src="imagens/fone-preto.png" alt="Fone Preto">
-      <h2>Fone Preto</h2>
-      <p>Qualidade de som incrível com conexão bluetooth.</p>
-      <p class="preco">R$ 99,90</p>
-      <a href="https://wa.me/554788506647?text=Quero%20o%20Fone%20Preto" class="btn">Quero esse produto</a>
+      <img src="https://i.imgur.com/uSRuP3O.jpg" alt="Fone Bluetooth">
+      <h3>Fone Bluetooth</h3>
+      <p class="preco">R$ 79,90</p>
+      <p class="slogan">“Uso todos os dias na academia, nunca falha!”</p>
+      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
     <div class="card">
-      <img src="imagens/fone-branco.png" alt="Fone Branco">
-      <h2>Fone Branco</h2>
-      <p>Design moderno e bateria de longa duração.</p>
-      <p class="preco">R$ 109,90</p>
-      <a href="https://wa.me/554788506647?text=Quero%20o%20Fone%20Branco" class="btn">Quero esse produto</a>
+      <img src="https://i.imgur.com/Hd7XGqu.jpg" alt="Mini Triturador">
+      <h3>Mini Triturador</h3>
+      <p class="preco">R$ 49,90</p>
+      <p class="slogan">“Facilitou minha vida na cozinha, super prático.”</p>
+      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
     <div class="card">
-      <img src="imagens/fone-rosa.png" alt="Fone Rosa">
-      <h2>Fone Rosa</h2>
-      <p>Estilo e potência no mesmo produto.</p>
+      <img src="https://i.imgur.com/wDIXbUg.jpg" alt="Smartwatch">
+      <h3>Smartwatch</h3>
+      <p class="preco">R$ 129,90</p>
+      <p class="slogan">“Me ajuda a controlar meus treinos e saúde.”</p>
+      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/0Yh8Yeg.jpg" alt="Luminária 3D Lua">
+      <h3>Luminária 3D Lua</h3>
+      <p class="preco">R$ 59,90</p>
+      <p class="slogan">“Deixa meu quarto super aconchegante à noite.”</p>
+      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/nRnErZn.jpg" alt="Escova Alisadora">
+      <h3>Escova Alisadora</h3>
+      <p class="preco">R$ 89,90</p>
+      <p class="slogan">“Meu cabelo fica liso em minutos, amei!”</p>
+      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/pE9KpnJ.jpg" alt="Câmera Wi-Fi">
+      <h3>Câmera Wi-Fi</h3>
+      <p class="preco">R$ 159,90</p>
+      <p class="slogan">“Agora consigo vigiar minha casa pelo celular.”</p>
+      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
+    </div>
+
+    <div class="card">
+      <img src="https://i.imgur.com/UkVclal.jpg" alt="Massageador Elétrico">
+      <h3>Massageador Elétrico</h3>
       <p class="preco">R$ 119,90</p>
-      <a href="https://wa.me/554788506647?text=Quero%20o%20Fone%20Rosa" class="btn">Quero esse produto</a>
+      <p class="slogan">“Uso depois do trabalho e relaxo na hora.”</p>
+      <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
-
-    <div class="card">
-      <img src="imagens/microondas.png" alt="Micro-ondas">
-      <h2>Micro-ondas</h2>
-      <p>Praticidade e rapidez no seu dia a dia.</p>
-      <p class="preco">R$ 499,90</p>
-      <a href="https://wa.me/554788506647?text=Quero%20o%20Micro-ondas" class="btn">Quero esse produto</a>
-    </div>
-
-    <div class="card">
-      <img src="imagens/trituradora.jpg" alt="Liquidificador">
-      <h2>Liquidificador</h2>
-      <p>Potente e fácil de usar para receitas incríveis.</p>
-      <p class="preco">R$ 199,90</p>
-      <a href="https://wa.me/554788506647?text=Quero%20o%20Liquidificador" class="btn">Quero esse produto</a>
-    </div>
-
-    <div class="card">
-      <img src="imagens/liquidificador-mondial-inox.webp" alt="Liquidificador Mondial Turbo Inox 3L">
-      <h2>Liquidificador Mondial Turbo Inox 3L</h2>
-      <p>Potente, versátil e com visual premium — ideal para o dia a dia da cozinha.</p>
-      <p class="preco">R$ 239,90</p>
-      <a href="https://wa.me/554788506647?text=Tenho%20interesse%20no%20Liquidificador%20Mondial%20Turbo%20Inox%203L" class="btn">Comprar pelo WhatsApp</a>
-    </div>
-
-    <div class="card">
-      <img src="imagens/smartwatch.jpg" alt="Smartwatch">
-      <h2>Smartwatch</h2>
-      <p>Conecte-se e acompanhe sua saúde no pulso.</p>
-      <p class="preco">R$ 299,90</p>
-      <a href="https://wa.me/554788506647?text=Quero%20o%20Smartwatch" class="btn">Quero esse produto</a>
-    </div>
-
-    <div class="card">
-      <img src="imagens/mini-trituradora.webp" alt="Mini Trituradora">
-      <h2>Mini Trituradora</h2>
-      <p>Compacta e prática para facilitar sua cozinha.</p>
-      <p class="preco">R$ 149,90</p>
-      <a href="https://wa.me/554788506647?text=Quero%20a%20Mini%20Trituradora" class="btn">Quero esse produto</a>
-    </div>
-
   </section>
 
-  <!-- Seção confiança -->
-  <section class="confiança">
-    <h3>✅ Compra Garantida</h3>
-    <ul>
-      <li>🔒 Pagamento 100% Seguro via Pix</li>
-      <li>⚡ Envio rápido para todo o Brasil</li>
-      <li>📱 Suporte direto no WhatsApp</li>
-      <li>🔄 7 dias de garantia de satisfação</li>
-    </ul>
-  </section>
 </body>
 </html>
-
 
 
