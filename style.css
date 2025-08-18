@@ -125,53 +125,40 @@ header p {
 
 /* --- RESPONSIVO (Celular) --- */
 @media (max-width: 768px) {
-  .banner img {
-    max-width: 100%;
-  }
-
-  .banner-oferta {
-    font-size: 1.2rem;
-  }
-
   .produtos {
-    grid-template-columns: 1fr; /* um produto por linha */
+    grid-template-columns: 1fr; /* só 1 por linha */
     justify-content: center;
     align-items: center;
   }
 
   .card {
     width: 95%;
-    max-width: 380px;   /* quadradinho maior */
+    max-width: 360px;   /* quadrado proporcional */
     margin: 15px auto;
-    padding: 22px;
+    padding: 20px;
   }
 
   .card img {
-    max-width: 320px;   /* imagem maior */
+    max-width: 220px;   /* imagem menor para caber */
+    height: auto;
     margin: 0 auto;
     display: block;
   }
 
   .card h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .card p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .preco {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .btn {
-    padding: 14px 22px;
-    font-size: 1.2rem;
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 }
-@media (max-width: 768px) {
-  body {
-    background: red !important;
-  }
-}
-
