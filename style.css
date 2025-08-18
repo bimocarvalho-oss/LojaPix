@@ -29,7 +29,7 @@ header p {
 /* Produtos em grid */
 .produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 0));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 30px;
   justify-content: center;
@@ -122,38 +122,49 @@ header p {
   margin-top: 10px;
 }
 
-
 /* --- RESPONSIVO (Celular) --- */
 @media (max-width: 768px) {
+  .banner img {
+    max-width: 100%;
+  }
+
+  .banner-oferta {
+    font-size: 1.2rem;
+  }
+
+  .produtos {
+    grid-template-columns: 1fr; /* um produto por linha */
+    justify-content: center;
+    align-items: center;
+  }
+
   .card {
     width: 95%;
-    max-width: 400px;
+    max-width: 420px;   /* cards maiores */
     margin: 15px auto;
-    padding: 22px;
+    padding: 24px;
   }
 
   .card img {
-    width: 100%;      /* ocupa toda a largura do card */
-    max-width: 360px; /* limite máximo maior */
-    height: auto;     /* mantém proporção */
+    max-width: 340px;   /* imagem bem maior */
     margin: 0 auto;
     display: block;
   }
 
   .card h2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .card p {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .preco {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .btn {
-    padding: 14px 22px;
-    font-size: 1.2rem;
+    padding: 16px 24px;
+    font-size: 1.3rem;
   }
 }
