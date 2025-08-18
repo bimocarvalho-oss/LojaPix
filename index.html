@@ -4,22 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoldenPi PixStore</title>
-  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Forçar centralização dos cards */
+    .produtos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      max-width: 250px;
+      text-align: center;
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .preco {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #ffc107;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #e0a800;
+    }
+  </style>
 </head>
 <body>
-
   <header>
     <img src="golden.png" alt="GoldenPi PixStore" style="max-width:180px; margin-bottom:10px;">
-    </header>    
-  
-<!-- Banner -->
-<div class="banner">
-  <img src="imagens/banner/banner-fone-preto.png" alt="Fone Preto em Oferta">
-  <p class="banner-oferta">🔥 Oferta Especial 🔥</p>
-</div>
-  
+    <h1>GoldenPi PixStore</h1>
+    <p>Ofertas especiais direto no Pix!</p>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="imagens/banner/banner-fone-preto.png" alt="Fone Preto em Oferta">
+    <p class="banner-oferta">🔥 Oferta Especial 🔥</p>
+  </div>
+
   <!-- Produtos -->
   <section class="produtos">
+
     <div class="card">
       <img src="imagens/fone-preto.png" alt="Fone Preto">
       <h2>Fone Preto</h2>
@@ -50,7 +90,7 @@
       <p>Praticidade e rapidez no seu dia a dia.</p>
       <p class="preco">R$ 499,90</p>
       <a href="https://wa.me/554788506647?text=Quero%20o%20Micro-ondas" class="btn">Quero esse produto</a>
-    <div>
+    </div>
 
     <div class="card">
       <img src="imagens/trituradora.jpg" alt="Liquidificador">
@@ -58,15 +98,15 @@
       <p>Potente e fácil de usar para receitas incríveis.</p>
       <p class="preco">R$ 199,90</p>
       <a href="https://wa.me/554788506647?text=Quero%20o%20Liquidificador" class="btn">Quero esse produto</a>
-     <div>
-       
-<div class="card">
-  <img src="imagens/liquidificador-mondial-inox.webp" alt="Liquidificador Mondial Turbo Inox 3L">
-  <p>Potente, versátil e com visual premium — ideal para o dia a dia da cozinha.</p>
-  <p class="preco">R$ 239,90</p>
-  <a href="https://wa.me/554788506647?text=Tenho%20interesse%20no%20Liquidificador%20Mondial%20Turbo%20Inox%203L" class="btn">
-    Quero esse produto </a>
-</div>
+    </div>
+
+    <div class="card">
+      <img src="imagens/liquidificador-mondial-inox.webp" alt="Liquidificador Mondial Turbo Inox 3L">
+      <h2>Liquidificador Mondial Turbo Inox 3L</h2>
+      <p>Potente, versátil e com visual premium — ideal para o dia a dia da cozinha.</p>
+      <p class="preco">R$ 239,90</p>
+      <a href="https://wa.me/554788506647?text=Tenho%20interesse%20no%20Liquidificador%20Mondial%20Turbo%20Inox%203L" class="btn">Comprar pelo WhatsApp</a>
+    </div>
 
     <div class="card">
       <img src="imagens/smartwatch.jpg" alt="Smartwatch">
@@ -82,8 +122,9 @@
       <p>Compacta e prática para facilitar sua cozinha.</p>
       <p class="preco">R$ 149,90</p>
       <a href="https://wa.me/554788506647?text=Quero%20a%20Mini%20Trituradora" class="btn">Quero esse produto</a>
-    <div>
+    </div>
 
+  </section>
 
   <!-- Seção confiança -->
   <section class="confiança">
@@ -97,5 +138,6 @@
   </section>
 </body>
 </html>
+
 
 
