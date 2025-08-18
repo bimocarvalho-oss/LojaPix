@@ -122,7 +122,6 @@ header p {
   margin-top: 10px;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .banner img {
     max-width: 100%;
@@ -132,9 +131,30 @@ header p {
   }
 
   .card {
-    width: 100%;   /* no celular ocupa toda a largura */
-    max-width: 300px;
+    width: 100%;   
+    max-width: 380px;  /* aumentei para deixar maior no celular */
     margin: 0 auto;
+  }
+
+  .card img {
+    max-width: 220px;  /* imagem maior */
+  }
+
+  .card h2 {
+    font-size: 1.5rem; /* título maior */
+  }
+
+  .card p {
+    font-size: 1.2rem; /* descrição maior */
+  }
+
+  .preco {
+    font-size: 1.6rem; /* preço maior */
+  }
+
+  .btn {
+    padding: 12px 20px; 
+    font-size: 1.1rem;
   }
 }
 
