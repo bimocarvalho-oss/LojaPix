@@ -4,207 +4,185 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoldenPi PixStore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #ece1cf;
       margin: 0;
       padding: 0;
-      background-color: #ece1cf;
       color: #333;
     }
     header {
-      background: #d4af37;
-      color: white;
       text-align: center;
       padding: 20px;
+      background: #fff3e0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    header img {
+      max-width: 200px;
     }
-    header p {
-      margin: 5px 0 0;
+    header h2 {
       font-family: 'Libre Baskerville', serif;
+      margin-top: 10px;
+      color: #444;
     }
-    .container {
+    .produtos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 20px;
     }
-    .product {
-      background: white;
+    .produto {
+      background: #fff;
       border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 15px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    .product img {
+    .produto img {
       max-width: 100%;
       border-radius: 10px;
     }
-    .product h2 {
+    .preco {
+      font-size: 18px;
+      font-weight: bold;
       margin: 10px 0;
-      font-size: 1.3rem;
+      color: #d4a017;
     }
-    .price {
-      color: #d4af37;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-    .btn {
+    .botao {
       display: inline-block;
-      margin-top: 10px;
       padding: 10px 15px;
-      background: #d4af37;
+      background: #d4a017;
       color: white;
-      border-radius: 10px;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
     }
-    .testimonial {
-      font-style: italic;
+    .depoimento {
       margin-top: 10px;
+      font-size: 14px;
+      font-style: italic;
       color: #555;
     }
-    .guarantee {
-      background: #fff8e7;
-      text-align: center;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .guarantee p {
-      margin: 8px 0;
-    }
-    .people-section {
-      padding: 30px;
-      text-align: center;
+    .pessoas-uso {
       background: #fff;
-    }
-    .people-section h2 {
-      color: #d4af37;
-      margin-bottom: 20px;
-    }
-    .people {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .people img {
-      width: 100%;
+      padding: 30px 20px;
+      margin: 20px;
       border-radius: 15px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .pessoas-uso h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    .pessoas-uso img {
+      max-width: 220px;
+      border-radius: 12px;
+      margin: 10px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>GoldenPi PixStore</h1>
-  <p>Produtos em alta com pagamento rápido via Pix</p>
-</header>
+  <!-- ✅ LOGO -->
+  <header>
+    <img src="imagens/logo.png" alt="GoldenPi PixStore">
+    <h2>A sua loja de confiança no Pix</h2>
+  </header>
 
-<div class="container">
-  <!-- Produtos -->
-  <div class="product">
-    <img src="imagens/fone_preto.webp" alt="Fone Preto">
-    <h2>Fone Bluetooth Preto</h2>
-    <p class="price">R$ 99,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+o+Fone+Bluetooth+Preto" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Uso todos os dias na academia, nunca mais fiquei sem música!" – João</p>
-  </div>
+  <!-- ✅ PRODUTOS -->
+  <section class="produtos">
 
-  <div class="product">
-    <img src="imagens/fone_branco.webp" alt="Fone Branco">
-    <h2>Fone Bluetooth Branco</h2>
-    <p class="price">R$ 99,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+o+Fone+Bluetooth+Branco" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Perfeito para reuniões online, som limpo e confortável!" – Camila</p>
-  </div>
+    <div class="produto">
+      <img src="imagens/fone_preto.webp" alt="Fone Preto">
+      <h3>Fone Preto</h3>
+      <p class="preco">R$ 99,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20no%20Fone%20Preto">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Uso todos os dias, bateria dura muito!" - João</p>
+    </div>
 
-  <div class="product">
-    <img src="imagens/fone_rosa.webp" alt="Fone Rosa">
-    <h2>Fone Bluetooth Rosa</h2>
-    <p class="price">R$ 99,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+o+Fone+Bluetooth+Rosa" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Amei a cor! Uso no trabalho e todos perguntam onde comprei." – Mariana</p>
-  </div>
+    <div class="produto">
+      <img src="imagens/fone_branco.webp" alt="Fone Branco">
+      <h3>Fone Branco</h3>
+      <p class="preco">R$ 99,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20no%20Fone%20Branco">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Som excelente e super confortável." - Maria</p>
+    </div>
 
-  <div class="product">
-    <img src="imagens/mini_triturador.webp" alt="Mini Triturador">
-    <h2>Mini Triturador Elétrico</h2>
-    <p class="price">R$ 79,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+o+Mini+Triturador" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Facilitou minha vida na cozinha, super prático!" – Fernanda</p>
-  </div>
+    <div class="produto">
+      <img src="imagens/fone_rosa.webp" alt="Fone Rosa">
+      <h3>Fone Rosa</h3>
+      <p class="preco">R$ 99,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20no%20Fone%20Rosa">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Lindo design, adorei!" - Carla</p>
+    </div>
 
-  <div class="product">
-    <img src="imagens/liquidificador.webp" alt="Liquidificador">
-    <h2>Liquidificador Portátil</h2>
-    <p class="price">R$ 129,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+o+Liquidificador" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Faço meus shakes no trabalho, muito prático!" – Pedro</p>
-  </div>
+    <div class="produto">
+      <img src="imagens/liquidificador.webp" alt="Liquidificador Portátil">
+      <h3>Liquidificador Portátil</h3>
+      <p class="preco">R$ 129,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20no%20Liquidificador">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Faço sucos em qualquer lugar!" - Pedro</p>
+    </div>
 
-  <div class="product">
-    <img src="imagens/escova_alisadora.webp" alt="Escova Alisadora">
-    <h2>Escova Alisadora</h2>
-    <p class="price">R$ 119,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+a+Escova+Alisadora" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Meu cabelo ficou liso em minutos, amei!" – Rafaela</p>
-  </div>
+    <div class="produto">
+      <img src="imagens/mini_triturador.webp" alt="Mini Triturador">
+      <h3>Mini Triturador</h3>
+      <p class="preco">R$ 79,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20no%20Mini%20Triturador">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Muito prático na cozinha." - Ana</p>
+    </div>
 
-  <div class="product">
-    <img src="imagens/luminaria3d.webp" alt="Luminária 3D">
-    <h2>Luminária 3D Lua</h2>
-    <p class="price">R$ 89,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+a+Luminária+3D" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Decora meu quarto e ainda é relaxante." – Juliana</p>
-  </div>
+    <div class="produto">
+      <img src="imagens/escova.webp" alt="Escova Alisadora">
+      <h3>Escova Alisadora</h3>
+      <p class="preco">R$ 149,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20na%20Escova%20Alisadora">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Deixa meu cabelo perfeito!" - Luiza</p>
+    </div>
 
-  <div class="product">
-    <img src="imagens/camera_wifi.webp" alt="Câmera Wi-Fi">
-    <h2>Câmera Wi-Fi</h2>
-    <p class="price">R$ 159,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+a+Câmera+WiFi" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Consigo monitorar minha casa pelo celular!" – Felipe</p>
-  </div>
+    <div class="produto">
+      <img src="imagens/luminaria.webp" alt="Luminária 3D">
+      <h3>Luminária 3D</h3>
+      <p class="preco">R$ 89,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20na%20Luminaria%203D">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Linda decoração para meu quarto!" - Beatriz</p>
+    </div>
 
-  <div class="product">
-    <img src="imagens/massageador.webp" alt="Massageador">
-    <h2>Massageador Elétrico</h2>
-    <p class="price">R$ 149,90</p>
-    <a href="https://wa.me/5547988506647?text=Quero+comprar+o+Massageador" class="btn">Comprar no WhatsApp</a>
-    <p class="testimonial">"Alívio imediato nas costas, recomendo demais." – Ana</p>
-  </div>
-</div>
+    <div class="produto">
+      <img src="imagens/camera.webp" alt="Câmera Wi-Fi">
+      <h3>Câmera Wi-Fi</h3>
+      <p class="preco">R$ 199,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20na%20Camera%20WiFi">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Segurança total em casa." - Marcos</p>
+    </div>
 
-<div class="guarantee">
-  <p>✅ Compra Garantida</p>
-  <p>🔒 Pagamento 100% Seguro via Pix</p>
-  <p>⚡ Envio rápido para todo o Brasil</p>
-  <p>📱 Suporte direto no WhatsApp</p>
-  <p>🔄 7 dias de garantia de satisfação</p>
-</div>
+    <div class="produto">
+      <img src="imagens/massageador.webp" alt="Massageador Elétrico">
+      <h3>Massageador Elétrico</h3>
+      <p class="preco">R$ 159,90</p>
+      <a class="botao" href="https://wa.me/5547988506647?text=Tenho%20interesse%20no%20Massageador">Comprar pelo WhatsApp</a>
+      <p class="depoimento">"Alívio imediato para as costas." - Fernanda</p>
+    </div>
 
-<div class="people-section">
-  <h2>Pessoas reais usando nossos produtos</h2>
-  <div class="people">
-    <img src="imagens/pessoa_fone.jpg" alt="Pessoa usando Fone">
-    <img src="imagens/pessoa_triturador.jpg" alt="Pessoa usando Triturador">
-    <img src="imagens/pessoa_escova.jpg" alt="Pessoa usando Escova">
-    <img src="imagens/pessoa_luminaria.jpg" alt="Pessoa usando Luminária">
-    <img src="imagens/pessoa_massageador.jpg" alt="Pessoa usando Massageador">
-  </div>
+  </section>
 
-  <footer>
-    <p>© 2025 GoldenPi PixStore - Todos os direitos reservados</p>
-  </footer>
+  <!-- ✅ PESSOAS USANDO OS PRODUTOS -->
+  <section class="pessoas-uso">
+    <h2>Clientes felizes usando nossos produtos</h2>
+    <div style="text-align:center;">
+      <img src="imagens/uso_fone.jpg" alt="Pessoa usando Fone">
+      <img src="imagens/uso_liquidificador.jpg" alt="Pessoa usando Liquidificador">
+      <img src="imagens/uso_escova.jpg" alt="Pessoa usando Escova">
+      <img src="imagens/uso_luminaria.jpg" alt="Pessoa usando Luminária">
+    </div>
+  </section>
 
 </body>
 </html>
+
 
 
 
