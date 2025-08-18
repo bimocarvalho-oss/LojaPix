@@ -137,8 +137,8 @@ header p {
 
   .card {
     width: 95%;          /* ocupa quase toda a tela */
-    max-width: none;     
-    margin: 0 auto;
+    max-width:300px;     
+    margin: 15px auto;
     padding: 20px;
   }
 
