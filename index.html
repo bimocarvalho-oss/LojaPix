@@ -13,32 +13,30 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
+      background: #ffffff;
       color: #333;
     }
 
     header {
       text-align: center;
       padding: 20px;
-      background: #000;
-      color: #ffc107;
+      background: #ffc107;
+      color: #000;
     }
 
     header h1 {
       margin: 10px 0 5px;
     }
 
-    /* Estilo da frase abaixo do logo (somente subtítulo) */
     .subtitulo {
       font-family: "Libre Baskerville", serif;
       font-size: 1.2rem;
       font-weight: 400;
-      color: #ffc107;
+      color: #000;
       margin-top: -5px;
       font-style: italic;
     }
 
-    /* Produtos */
     .produtos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -74,10 +72,24 @@
       margin: 8px 0;
     }
 
+    .depoimento {
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #444;
+    }
+
+    .depoimento img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 5px;
+    }
+
     .btn {
       display: inline-block;
-      background: #ffc107;
-      color: #000;
+      background: #000;
+      color: #ffc107;
       padding: 10px 15px;
       border-radius: 8px;
       text-decoration: none;
@@ -85,7 +97,27 @@
     }
 
     .btn:hover {
-      background: #e0a800;
+      background: #333;
+    }
+
+    .beneficios {
+      background: #f8f9fa;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .beneficios ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .beneficios li {
+      font-size: 1rem;
+      margin: 10px 0;
     }
   </style>
 </head>
@@ -103,6 +135,10 @@
       <h3>Fone Bluetooth</h3>
       <p class="preco">R$ 79,90</p>
       <p class="slogan">“Uso todos os dias na academia, nunca falha!”</p>
+      <div class="depoimento">
+        <img src="https://i.imgur.com/5Y2pG1K.jpg" alt="Cliente feliz">
+        <p>Maria, 27 anos</p>
+      </div>
       <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
@@ -111,6 +147,10 @@
       <h3>Mini Triturador</h3>
       <p class="preco">R$ 49,90</p>
       <p class="slogan">“Facilitou minha vida na cozinha, super prático.”</p>
+      <div class="depoimento">
+        <img src="https://i.imgur.com/c0p0Z9W.jpg" alt="Cliente feliz">
+        <p>João, 35 anos</p>
+      </div>
       <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
@@ -119,6 +159,10 @@
       <h3>Smartwatch</h3>
       <p class="preco">R$ 129,90</p>
       <p class="slogan">“Me ajuda a controlar meus treinos e saúde.”</p>
+      <div class="depoimento">
+        <img src="https://i.imgur.com/zltJkMt.jpg" alt="Cliente feliz">
+        <p>Ana, 30 anos</p>
+      </div>
       <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
@@ -127,6 +171,10 @@
       <h3>Luminária 3D Lua</h3>
       <p class="preco">R$ 59,90</p>
       <p class="slogan">“Deixa meu quarto super aconchegante à noite.”</p>
+      <div class="depoimento">
+        <img src="https://i.imgur.com/KZV1d5x.jpg" alt="Cliente feliz">
+        <p>Lucas, 22 anos</p>
+      </div>
       <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
@@ -135,6 +183,10 @@
       <h3>Escova Alisadora</h3>
       <p class="preco">R$ 89,90</p>
       <p class="slogan">“Meu cabelo fica liso em minutos, amei!”</p>
+      <div class="depoimento">
+        <img src="https://i.imgur.com/XJ8qViZ.jpg" alt="Cliente feliz">
+        <p>Fernanda, 25 anos</p>
+      </div>
       <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
@@ -143,6 +195,10 @@
       <h3>Câmera Wi-Fi</h3>
       <p class="preco">R$ 159,90</p>
       <p class="slogan">“Agora consigo vigiar minha casa pelo celular.”</p>
+      <div class="depoimento">
+        <img src="https://i.imgur.com/pnvDpvc.jpg" alt="Cliente feliz">
+        <p>Ricardo, 40 anos</p>
+      </div>
       <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
 
@@ -151,8 +207,22 @@
       <h3>Massageador Elétrico</h3>
       <p class="preco">R$ 119,90</p>
       <p class="slogan">“Uso depois do trabalho e relaxo na hora.”</p>
+      <div class="depoimento">
+        <img src="https://i.imgur.com/CKS3uix.jpg" alt="Cliente feliz">
+        <p>Paula, 33 anos</p>
+      </div>
       <a class="btn" href="https://wa.me/5547988506647" target="_blank">Comprar no WhatsApp</a>
     </div>
+  </section>
+
+  <section class="beneficios">
+    <ul>
+      <li>✅ Compra Garantida</li>
+      <li>🔒 Pagamento 100% Seguro via Pix</li>
+      <li>⚡ Envio rápido para todo o Brasil</li>
+      <li>📱 Suporte direto no WhatsApp</li>
+      <li>🔄 7 dias de garantia de satisfação</li>
+    </ul>
   </section>
 
 </body>
