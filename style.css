@@ -29,11 +29,14 @@ header p {
 /* Produtos em grid */
 .produtos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 30px;
-justify-items: center;
+
+  justify-content: center;  /* centraliza os itens na linha */
+  align-items: start;       /* alinha pelo topo (opcional) */
 }
+
 
 .card {
   background: #fff;
