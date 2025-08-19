@@ -403,23 +403,24 @@
         return;
       }
 
-      let mensagem = "Olá! Quero finalizar minha compra:%0A%0A";
+      let mensagem = "Olá! Quero finalizar minha compra:\n\n";
       let total = 0;
       carrinho.forEach(item => {
-        total += item.preco;
-        mensagem += `• ${item.nome} — ${moeda(item.preco)}%0A`;
-      });
-      mensagem += `%0ATotal: ${moeda(total)}%0A%0A`;
-      mensagem += `👤 Nome: ${nome}%0A`;
-      mensagem += `📱 Telefone: ${telefone}%0A`;
-      mensagem += `📍 Endereço: ${endereco}%0A`;
-      mensagem += `🏙️ Cidade/UF: ${cidade}%0A`;
-      mensagem += `📮 CEP: ${cep}%0A`;
-      if (email) mensagem += `📧 Email: ${email}%0A`;
-      if (obs) mensagem += `📝 Observações: ${encodeURIComponent(obs)}%0A`;
+  total += item.preco;
+  mensagem += `• ${item.nome} — ${moeda(item.preco)}\n`;
+});
 
-      const url = `https://wa.me/5547988506647?text=${encodeURIComponent(decodeURIComponent(mensagem))}`;
-      window.open(url, "_blank");
+mensagem += `\nTotal: ${moeda(total)}\n\n`;
+mensagem += `👤 Nome: ${nome}\n`;
+mensagem += `📱 Telefone: ${telefone}\n`;
+mensagem += `📍 Endereço: ${endereco}\n`;
+mensagem += `🏙️ Cidade/UF: ${cidade}\n`;
+mensagem += `📮 CEP: ${cep}\n`;
+if (email) mensagem += `📧 Email: ${email}\n`;
+if (obs) mensagem += `📝 Observações: ${obs}\n`;
+
+const url = `https://wa.me/5547988506647?text=${encodeURIComponent(mensagem)}`;
+window.open(url, "_blank");
 
       // Opcional: fechar e limpar carrinho
       fecharFormulario();
