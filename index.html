@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoldenPi PixStore</title>
+  <style>
+  #carrinho {
+    position: sticky;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-left: auto;
+  }
+</style>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <style>
    #carrinho {
@@ -316,16 +328,16 @@
   </div>
 
   <!-- Carrinho -->
-  <div style="width: 320px; padding: 20px;">
+  <div style="width: 320px; padding: 20px; position: sticky; top: 20px;">
     <div id="carrinho">
       <!-- conteúdo do carrinho -->
     </div>
   </div>
-</div>
-  <footer>
-    <p>© 2025 GoldenPi PixStore - Todos os direitos reservados</p>
-  </footer>
+</div> <!-- fechamento do display:flex -->
 
+<footer>
+  <p>© 2025 GoldenPi PixStore - Todos os direitos reservados</p>
+</footer>
   <!-- 🔒 FORMULÁRIO POPUP (abre ao finalizar) -->
   <div id="overlay"></div>
   <div id="formularioCompra">
