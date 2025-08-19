@@ -4,195 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoldenPi PixStore</title>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #ece1cf;
       margin: 0;
       padding: 0;
-      color: #333;
+      background: #f9f9f9;
     }
     header {
-      text-align: center;
+      background: #222;
+      color: #fff;
       padding: 20px;
-      background: #fff3e0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: relative;
+      text-align: center;
     }
-    header img {
-      max-width: 200px;
-    }
-    header h2 {
-      font-family: 'Libre Baskerville', serif;
-      margin-top: 10px;
-      color: #444;
-    }
-    /* 🛒 Badge do carrinho no topo */
-    .cart {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 16px;
-      background: #d4a017;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-weight: bold;
-      cursor: default;
-      user-select: none;
-    }
-
-    .produtos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       padding: 20px;
     }
     .produto {
       background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 10px;
       padding: 15px;
+      width: 250px;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .produto img {
       max-width: 100%;
-      border-radius: 10px;
+      border-radius: 8px;
     }
     .preco {
       font-size: 18px;
       font-weight: bold;
-      margin: 10px 0;
-      color: #d4a017;
+      color: #e60000;
     }
     .botao {
-      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      border: none;
       padding: 10px 15px;
-      background: #d4a017;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      border-radius: 5px;
       cursor: pointer;
-      margin-top: 8px;
     }
-
-    .guarantee {
-      text-align: center;
-      margin: 30px auto;
-      padding: 15px;
-      background: #fff3e0;
-      border-radius: 12px;
-      max-width: 600px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .botao:hover {
+      background: #218838;
     }
-    .guarantee p {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    /* 🛒 Estilo do carrinho (lista + total) */
+    /* Carrinho fixo */
     #carrinho {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
       background: #fff;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border: 2px solid #333;
+      border-radius: 10px 0 0 10px;
+      width: 280px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: -3px 0 6px rgba(0,0,0,0.2);
+      transition: right 0.3s;
+      z-index: 1000;
+    }
+    #carrinho.minimizado {
+      right: -240px;
+    }
+    #carrinho header {
+      background: #333;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
     }
     #carrinho ul {
       list-style: none;
-      padding: 0;
-    }
-    #carrinho li {
-      margin: 6px 0;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-    #carrinho button.remover {
-      background: #d9534f;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      padding: 4px 8px;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #fff3e0;
-      margin-top: 20px;
-    }
-
-    /* 🧾 Formulário popup (dados do comprador) */
-    #overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 999;
-    }
-    #formularioCompra {
-      display: none;
-      position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      z-index: 1000;
-      width: 95%;
-      max-width: 520px;
-    }
-    #formularioCompra h3 {
-      margin: 0 0 10px 0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .grid > div { display: flex; flex-direction: column; }
-    label { font-size: 13px; margin: 6px 0 4px; }
-    input, textarea, select {
       padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      margin: 0;
+    }
+    #carrinho ul li {
       font-size: 14px;
-      width: 100%;
-      box-sizing: border-box;
+      margin-bottom: 8px;
     }
-    textarea { resize: vertical; min-height: 70px; }
-    .acoes {
-      display: flex; gap: 10px; margin-top: 12px;
+    #carrinho .total {
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      border-top: 1px solid #ddd;
     }
-    .btn-sec {
-      background: #999; color: #fff; border: none; border-radius: 8px; padding: 10px 14px; cursor: pointer;
-    }
-    .btn-pri {
-      background: #d4a017; color: #fff; border: none; border-radius: 8px; padding: 10px 14px; cursor: pointer; font-weight: bold;
-    }
-
   </style>
 </head>
 <body>
-
-  <!-- ✅ LOGO + Badge do Carrinho -->
   <header>
-    <img src="imagens/logo.png" alt="GoldenPi PixStore">
-    <h2>A sua loja de confiança no Pix</h2>
-    <div class="cart">🛒 <span id="cart-count">0</span> item(s)</div>
+    <h1>GoldenPi PixStore</h1>
   </header>
 
-  <!-- ✅ PRODUTOS (TODOS) -->
-  <section class="produtos">
-
+  <div class="container">
+    <!-- Produtos -->
     <div class="produto">
       <img src="imagens/fone_preto.png" alt="Fone Preto">
       <h3>Fone Bluetooth Preto</h3>
@@ -288,176 +201,49 @@
       <button class="botao" onclick="adicionarAoCarrinho('Massageador Elétrico', 159.90)">Adicionar ao Carrinho</button>
       <p class="depoimento">"Alívio imediato para as costas." - Fernanda</p>
     </div>
-
-  </section>
-
-  <!-- ✅ GARANTIAS -->
-  <div class="guarantee">
-    <p>✅ Compra Garantida</p>
-    <p>🔒 Pagamento 100% Seguro via Pix</p>
-    <p>⚡ Envio rápido para todo o Brasil</p>
-    <p>📱 Suporte direto no WhatsApp</p>
-    <p>🔄 7 dias de garantia de satisfação</p>
   </div>
 
-  <!-- 🛒 CARRINHO (lista + total + finalizar) -->
-  <div id="carrinho">
-    <h3>🛒 Meu Carrinho</h3>
-    <ul id="itensCarrinho"></ul>
-    <p><strong>Total:</strong> <span id="total">R$ 0,00</span></p>
-    <button class="botao" onclick="finalizarCompra()">Finalizar no WhatsApp</button>
-  </div>
-
-  <footer>
-    <p>© 2025 GoldenPi PixStore - Todos os direitos reservados</p>
-  </footer>
-
-  <!-- 🔒 FORMULÁRIO POPUP (abre ao finalizar) -->
-  <div id="overlay"></div>
-  <div id="formularioCompra">
-    <h3>Preencha seus dados para concluir</h3>
-    <div class="grid">
-      <div>
-        <label for="nome">Nome completo *</label>
-        <input type="text" id="nome" placeholder="Seu nome" required>
-      </div>
-      <div>
-        <label for="telefone">Telefone (WhatsApp) *</label>
-        <input type="tel" id="telefone" placeholder="(DD) 9XXXX-XXXX" required>
-      </div>
-      <div>
-        <label for="cep">CEP *</label>
-        <input type="text" id="cep" placeholder="00000-000" required>
-      </div>
-      <div>
-        <label for="cidade">Cidade/UF *</label>
-        <input type="text" id="cidade" placeholder="Cidade - UF" required>
-      </div>
-      <div style="grid-column: 1 / -1;">
-        <label for="endereco">Endereço completo *</label>
-        <input type="text" id="endereco" placeholder="Rua, número, bairro" required>
-      </div>
-      <div style="grid-column: 1 / -1;">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="voce@exemplo.com">
-      </div>
-      <div style="grid-column: 1 / -1;">
-        <label for="obs">Observações do pedido</label>
-        <textarea id="obs" placeholder="Ex.: deixar na portaria, presente, cor preferida etc."></textarea>
-      </div>
-    </div>
-    <div class="acoes">
-      <button class="btn-sec" onclick="fecharFormulario()">Cancelar</button>
-      <button class="btn-pri" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
-    </div>
+  <!-- Carrinho -->
+  <div id="carrinho" class="minimizado">
+    <header onclick="toggleCarrinho()">
+      Carrinho (<span id="quantidade">0</span>) <span id="toggle">⬅️</span>
+    </header>
+    <ul id="itens"></ul>
+    <div class="total">Total: R$ <span id="total">0.00</span></div>
   </div>
 
   <script>
-    // Estado do carrinho
     let carrinho = [];
 
-    // Utilitário de moeda (pt-BR)
-    const moeda = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-    // Atualiza badge (contador) no topo
-    function atualizarBadge() {
-      document.getElementById('cart-count').textContent = carrinho.length;
-    }
-
-    // Adiciona item
-    function adicionarAoCarrinho(nome, preco) {
-      carrinho.push({ nome, preco });
+    function adicionarAoCarrinho(produto, preco) {
+      carrinho.push({ produto, preco });
       atualizarCarrinho();
-      atualizarBadge();
     }
 
-    // Lista/Total no carrinho
     function atualizarCarrinho() {
-      const lista = document.getElementById("itensCarrinho");
-      const totalSpan = document.getElementById("total");
-      lista.innerHTML = "";
-      let total = 0;
+      const lista = document.getElementById('itens');
+      const total = document.getElementById('total');
+      const quantidade = document.getElementById('quantidade');
 
-      carrinho.forEach((item, index) => {
-        total += item.preco;
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <span>${item.nome} — ${moeda(item.preco)}</span>
-          <button class="remover" onclick="removerItem(${index})">Remover</button>
-        `;
-        lista.appendChild(li);
-      });
+      lista.innerHTML = '';
+      let soma = 0;
 
-      totalSpan.textContent = moeda(total);
-    }
-
-    // Remove item
-    function removerItem(index) {
-      carrinho.splice(index, 1);
-      atualizarCarrinho();
-      atualizarBadge();
-    }
-
-    // Abre formulário ao finalizar
-    function finalizarCompra() {
-      if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-      }
-      document.getElementById("overlay").style.display = "block";
-      document.getElementById("formularioCompra").style.display = "block";
-    }
-
-    // Fecha formulário
-    function fecharFormulario() {
-      document.getElementById("overlay").style.display = "none";
-      document.getElementById("formularioCompra").style.display = "none";
-    }
-    document.getElementById("overlay").onclick = fecharFormulario;
-
-    // Monta mensagem e abre WhatsApp
-    function enviarWhatsApp() {
-      // Validação simples
-      const nome = document.getElementById("nome").value.trim();
-      const telefone = document.getElementById("telefone").value.trim();
-      const cep = document.getElementById("cep").value.trim();
-      const cidade = document.getElementById("cidade").value.trim();
-      const endereco = document.getElementById("endereco").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const obs = document.getElementById("obs").value.trim();
-
-      if (!nome || !telefone || !cep || !cidade || !endereco) {
-        alert("Preencha os campos obrigatórios (*) para continuar.");
-        return;
-      }
-
-      let mensagem = "Olá! Quero finalizar minha compra:%0A%0A";
-      let total = 0;
       carrinho.forEach(item => {
-        total += item.preco;
-        mensagem += `• ${item.nome} — ${moeda(item.preco)}%0A`;
+        const li = document.createElement('li');
+        li.textContent = `${item.produto} - R$ ${item.preco.toFixed(2)}`;
+        lista.appendChild(li);
+        soma += item.preco;
       });
-      mensagem += `%0ATotal: ${moeda(total)}%0A%0A`;
-      mensagem += `👤 Nome: ${nome}%0A`;
-      mensagem += `📱 Telefone: ${telefone}%0A`;
-      mensagem += `📍 Endereço: ${endereco}%0A`;
-      mensagem += `🏙️ Cidade/UF: ${cidade}%0A`;
-      mensagem += `📮 CEP: ${cep}%0A`;
-      if (email) mensagem += `📧 Email: ${email}%0A`;
-      if (obs) mensagem += `📝 Observações: ${encodeURIComponent(obs)}%0A`;
 
-      const url = `https://wa.me/5547988506647?text=${encodeURIComponent(decodeURIComponent(mensagem))}`;
-      window.open(url, "_blank");
-
-      // Opcional: fechar e limpar carrinho
-      fecharFormulario();
-      // carrinho = []; atualizarCarrinho(); atualizarBadge();
+      total.textContent = soma.toFixed(2);
+      quantidade.textContent = carrinho.length;
     }
 
-    // Inicializa contador
-    atualizarBadge();
+    function toggleCarrinho() {
+      const div = document.getElementById('carrinho');
+      div.classList.toggle('minimizado');
+    }
   </script>
-
 </body>
 </html>
 
