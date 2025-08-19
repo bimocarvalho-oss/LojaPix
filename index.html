@@ -6,14 +6,7 @@
   <title>GoldenPi PixStore</title>
   <style>
   #carrinho {
-    position: sticky;
-    top: 20px;
-    right: 20px;
-    width: 300px;
-    max-height: 80vh;
-    overflow-y: auto;
-    z-index: 1000;
-    margin-left: auto;
+    
   }
 </style>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
@@ -47,19 +40,7 @@
       margin-top: 10px;
       color: #444;
     }
-    /* 🛒 Badge do carrinho no topo */
-    .cart {
-      position: sticky;
-      top: 20px;
-      right: 20px;
-      font-size: 16px;
-      background: #d4a017;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-weight: bold;
-      cursor: default;
-      user-select: none;
+   
     }
 
     .produtos {
@@ -110,28 +91,7 @@
       margin: 8px 0;
       font-size: 16px;
     }
-
-    /* 🛒 Estilo do carrinho (lista + total) */
-    #carrinho {
-      position: sticky;
-      background: #fff;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    #carrinho ul {
-      list-style: none;
-      padding: 0;
-    }
-    #carrinho li {
-      margin: 6px 0;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
+   
     }
  .cart { display: none !important; }
     }
@@ -313,27 +273,13 @@
     <p>📱 Suporte direto no WhatsApp</p>
     <p>🔄 7 dias de garantia de satisfação</p>
   </div>
-
-  <!-- 🛒 CARRINHO (lista + total + finalizar) -->
-  <div id="carrinho">
-    <h3>🛒 Meu Carrinho</h3>
-    <ul id="itensCarrinho"></ul>
-    <p><strong>Total:</strong> <span id="total">R$ 0,00</span></p>
-    <button class="botao" onclick="finalizarCompra()">Finalizar no WhatsApp</button>
-  </div>
-<div style="display: flex; align-items: flex-start;">
-  <!-- Produtos -->
-  <div style="flex: 1; padding: 20px;">
-    <!-- seus produtos aqui -->
-  </div>
-
-  <!-- Carrinho -->
-  <div style="width: 320px; padding: 20px; position: sticky; top: 20px;">
-    <div id="carrinho">
-      <!-- conteúdo do carrinho -->
-    </div>
-  </div>
-</div> <!-- fechamento do display:flex -->
+<!-- Carrinho pequeno flutuante -->
+<div id="miniCarrinho" style="position: fixed; top: 20px; right: 20px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; width: 200px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+  <h4>🛒 Carrinho</h4>
+  <ul id="itensMiniCarrinho"></ul>
+  <p><strong>Total:</strong> <span id="totalMini">R$ 0,00</span></p>
+  <button onclick="finalizarCompra()">Finalizar</button>
+</div>
 
 <footer>
   <p>© 2025 GoldenPi PixStore - Todos os direitos reservados</p>
