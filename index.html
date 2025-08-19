@@ -18,13 +18,31 @@
       padding: 20px;
       background: #fff3e0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
     }
-    header img { max-width: 200px; }
+    header img {
+      max-width: 200px;
+    }
     header h2 {
       font-family: 'Libre Baskerville', serif;
       margin-top: 10px;
       color: #444;
     }
+    /* 🛒 Badge do carrinho no topo */
+    .cart {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 16px;
+      background: #d4a017;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: default;
+      user-select: none;
+    }
+
     .produtos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -38,7 +56,10 @@
       padding: 15px;
       text-align: center;
     }
-    .produto img { max-width: 100%; border-radius: 10px; }
+    .produto img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
     .preco {
       font-size: 18px;
       font-weight: bold;
@@ -54,7 +75,9 @@
       border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
+      margin-top: 8px;
     }
+
     .guarantee {
       text-align: center;
       margin: 30px auto;
@@ -64,9 +87,12 @@
       max-width: 600px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .guarantee p { margin: 8px 0; font-size: 16px; }
+    .guarantee p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
 
-    /* 🛒 Estilo do carrinho */
+    /* 🛒 Estilo do carrinho (lista + total) */
     #carrinho {
       background: #fff;
       margin: 20px auto;
@@ -75,34 +101,98 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    #carrinho ul { list-style: none; padding: 0; }
-    #carrinho li { margin: 5px 0; font-size: 15px; }
-    #carrinho button {
-      background: red;
+    #carrinho ul {
+      list-style: none;
+      padding: 0;
+    }
+    #carrinho li {
+      margin: 6px 0;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    #carrinho button.remover {
+      background: #d9534f;
       color: white;
       border: none;
-      border-radius: 5px;
-      padding: 3px 6px;
+      border-radius: 6px;
+      padding: 4px 8px;
       cursor: pointer;
     }
-    #formDados input {
-      width: 95%;
-      padding: 8px;
-      margin: 5px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #fff3e0;
+      margin-top: 20px;
     }
+
+    /* 🧾 Formulário popup (dados do comprador) */
+    #overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    #formularioCompra {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 1000;
+      width: 95%;
+      max-width: 520px;
+    }
+    #formularioCompra h3 {
+      margin: 0 0 10px 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .grid > div { display: flex; flex-direction: column; }
+    label { font-size: 13px; margin: 6px 0 4px; }
+    input, textarea, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    textarea { resize: vertical; min-height: 70px; }
+    .acoes {
+      display: flex; gap: 10px; margin-top: 12px;
+    }
+    .btn-sec {
+      background: #999; color: #fff; border: none; border-radius: 8px; padding: 10px 14px; cursor: pointer;
+    }
+    .btn-pri {
+      background: #d4a017; color: #fff; border: none; border-radius: 8px; padding: 10px 14px; cursor: pointer; font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
-  <!-- ✅ LOGO -->
+
+  <!-- ✅ LOGO + Badge do Carrinho -->
   <header>
     <img src="imagens/logo.png" alt="GoldenPi PixStore">
     <h2>A sua loja de confiança no Pix</h2>
+    <div class="cart">🛒 <span id="cart-count">0</span> item(s)</div>
   </header>
 
-  <!-- ✅ PRODUTOS -->
+  <!-- ✅ PRODUTOS (TODOS) -->
   <section class="produtos">
+
     <div class="produto">
       <img src="imagens/fone_preto.png" alt="Fone Preto">
       <h3>Fone Bluetooth Preto</h3>
@@ -110,6 +200,7 @@
       <p class="preco">R$ 99,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Fone Preto', 99.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/fone-branco.png" alt="Fone Branco">
       <h3>Fone Bluetooth Branco</h3>
@@ -117,6 +208,7 @@
       <p class="preco">R$ 109,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Fone Branco', 109.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/fone_rosa.webp" alt="Fone Rosa">
       <h3>Fone Bluetooth Rosa</h3>
@@ -124,6 +216,7 @@
       <p class="preco">R$ 119,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Fone Rosa', 119.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/liquidificador-mondial-inox.webp" alt="Liquidificador">
       <h3>Liquidificador Inox Mondial</h3>
@@ -131,6 +224,7 @@
       <p class="preco">R$ 199,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Liquidificador Inox Mondial', 199.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/mini-trituradora.webp" alt="Mini Trituradora">
       <h3>Mini Trituradora Portátil</h3>
@@ -138,6 +232,7 @@
       <p class="preco">R$ 79,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Mini Trituradora Portátil', 79.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/microondas.png" alt="Micro-ondas">
       <h3>Micro-ondas</h3>
@@ -145,6 +240,7 @@
       <p class="preco">R$ 499,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Micro-ondas', 499.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/smartwatch.jpg" alt="Smartwatch">
       <h3>Smartwatch</h3>
@@ -152,6 +248,7 @@
       <p class="preco">R$ 249,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Smartwatch', 249.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/trituradora.jpg" alt="Trituradora">
       <h3>Trituradora Elétrica</h3>
@@ -159,6 +256,7 @@
       <p class="preco">R$ 149,90</p>
       <button class="botao" onclick="adicionarAoCarrinho('Trituradora Elétrica', 149.90)">Adicionar ao Carrinho</button>
     </div>
+
     <div class="produto">
       <img src="imagens/Escova.webp" alt="Escova Alisadora">
       <h3>Escova Alisadora</h3>
@@ -166,6 +264,7 @@
       <button class="botao" onclick="adicionarAoCarrinho('Escova Alisadora', 149.90)">Adicionar ao Carrinho</button>
       <p class="depoimento">"Deixa meu cabelo perfeito!" - Luiza</p>
     </div>
+
     <div class="produto">
       <img src="imagens/luminaria.png" alt="Luminária 3D">
       <h3>Luminária 3D</h3>
@@ -173,6 +272,7 @@
       <button class="botao" onclick="adicionarAoCarrinho('Luminária 3D', 89.90)">Adicionar ao Carrinho</button>
       <p class="depoimento">"Linda decoração para meu quarto!" - Beatriz</p>
     </div>
+
     <div class="produto">
       <img src="imagens/camera.png" alt="Câmera Wi-Fi">
       <h3>Câmera Wi-Fi</h3>
@@ -180,6 +280,7 @@
       <button class="botao" onclick="adicionarAoCarrinho('Câmera Wi-Fi', 199.90)">Adicionar ao Carrinho</button>
       <p class="depoimento">"Segurança total em casa." - Marcos</p>
     </div>
+
     <div class="produto">
       <img src="imagens/massageador.png" alt="Massageador Elétrico">
       <h3>Massageador Elétrico</h3>
@@ -187,6 +288,7 @@
       <button class="botao" onclick="adicionarAoCarrinho('Massageador Elétrico', 159.90)">Adicionar ao Carrinho</button>
       <p class="depoimento">"Alívio imediato para as costas." - Fernanda</p>
     </div>
+
   </section>
 
   <!-- ✅ GARANTIAS -->
@@ -198,24 +300,11 @@
     <p>🔄 7 dias de garantia de satisfação</p>
   </div>
 
-  <!-- 🛒 CARRINHO -->
+  <!-- 🛒 CARRINHO (lista + total + finalizar) -->
   <div id="carrinho">
     <h3>🛒 Meu Carrinho</h3>
     <ul id="itensCarrinho"></ul>
-    <p><strong>Total:</strong> R$ <span id="total">0,00</span></p>
-
-    <!-- 📋 FORMULÁRIO DE DADOS -->
-    <h4>Seus Dados</h4>
-    <form id="formDados">
-      <input type="text" id="nome" placeholder="Nome completo" required><br>
-      <input type="text" id="endereco" placeholder="Endereço" required><br>
-      <input type="text" id="bairro" placeholder="Bairro" required><br>
-      <input type="text" id="cidade" placeholder="Cidade" required><br>
-      <input type="text" id="estado" placeholder="Estado" required><br>
-      <input type="text" id="cep" placeholder="CEP" required><br>
-      <input type="text" id="telefone" placeholder="Telefone" required><br>
-    </form>
-
+    <p><strong>Total:</strong> <span id="total">R$ 0,00</span></p>
     <button class="botao" onclick="finalizarCompra()">Finalizar no WhatsApp</button>
   </div>
 
@@ -223,68 +312,152 @@
     <p>© 2025 GoldenPi PixStore - Todos os direitos reservados</p>
   </footer>
 
+  <!-- 🔒 FORMULÁRIO POPUP (abre ao finalizar) -->
+  <div id="overlay"></div>
+  <div id="formularioCompra">
+    <h3>Preencha seus dados para concluir</h3>
+    <div class="grid">
+      <div>
+        <label for="nome">Nome completo *</label>
+        <input type="text" id="nome" placeholder="Seu nome" required>
+      </div>
+      <div>
+        <label for="telefone">Telefone (WhatsApp) *</label>
+        <input type="tel" id="telefone" placeholder="(DD) 9XXXX-XXXX" required>
+      </div>
+      <div>
+        <label for="cep">CEP *</label>
+        <input type="text" id="cep" placeholder="00000-000" required>
+      </div>
+      <div>
+        <label for="cidade">Cidade/UF *</label>
+        <input type="text" id="cidade" placeholder="Cidade - UF" required>
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label for="endereco">Endereço completo *</label>
+        <input type="text" id="endereco" placeholder="Rua, número, bairro" required>
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="voce@exemplo.com">
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label for="obs">Observações do pedido</label>
+        <textarea id="obs" placeholder="Ex.: deixar na portaria, presente, cor preferida etc."></textarea>
+      </div>
+    </div>
+    <div class="acoes">
+      <button class="btn-sec" onclick="fecharFormulario()">Cancelar</button>
+      <button class="btn-pri" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+    </div>
+  </div>
+
   <script>
+    // Estado do carrinho
     let carrinho = [];
 
+    // Utilitário de moeda (pt-BR)
+    const moeda = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    // Atualiza badge (contador) no topo
+    function atualizarBadge() {
+      document.getElementById('cart-count').textContent = carrinho.length;
+    }
+
+    // Adiciona item
     function adicionarAoCarrinho(nome, preco) {
       carrinho.push({ nome, preco });
       atualizarCarrinho();
+      atualizarBadge();
     }
 
+    // Lista/Total no carrinho
     function atualizarCarrinho() {
-      let lista = document.getElementById("itensCarrinho");
-      let total = 0;
+      const lista = document.getElementById("itensCarrinho");
+      const totalSpan = document.getElementById("total");
       lista.innerHTML = "";
+      let total = 0;
 
       carrinho.forEach((item, index) => {
         total += item.preco;
-        lista.innerHTML += `<li>${item.nome} - R$ ${item.preco.toFixed(2)} 
-          <button onclick="removerItem(${index})">❌</button></li>`;
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${item.nome} — ${moeda(item.preco)}</span>
+          <button class="remover" onclick="removerItem(${index})">Remover</button>
+        `;
+        lista.appendChild(li);
       });
 
-      document.getElementById("total").innerText = total.toFixed(2);
+      totalSpan.textContent = moeda(total);
     }
 
+    // Remove item
     function removerItem(index) {
       carrinho.splice(index, 1);
       atualizarCarrinho();
+      atualizarBadge();
     }
 
+    // Abre formulário ao finalizar
     function finalizarCompra() {
       if (carrinho.length === 0) {
         alert("Seu carrinho está vazio!");
         return;
       }
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("formularioCompra").style.display = "block";
+    }
 
-      // pega os dados do formulário
-      let nome = document.getElementById("nome").value;
-      let endereco = document.getElementById("endereco").value;
-      let bairro = document.getElementById("bairro").value;
-      let cidade = document.getElementById("cidade").value;
-      let estado = document.getElementById("estado").value;
-      let cep = document.getElementById("cep").value;
-      let telefone = document.getElementById("telefone").value;
+    // Fecha formulário
+    function fecharFormulario() {
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("formularioCompra").style.display = "none";
+    }
+    document.getElementById("overlay").onclick = fecharFormulario;
 
-      if (!nome || !endereco || !bairro || !cidade || !estado || !cep || !telefone) {
-        alert("Por favor, preencha todos os campos antes de finalizar a compra.");
+    // Monta mensagem e abre WhatsApp
+    function enviarWhatsApp() {
+      // Validação simples
+      const nome = document.getElementById("nome").value.trim();
+      const telefone = document.getElementById("telefone").value.trim();
+      const cep = document.getElementById("cep").value.trim();
+      const cidade = document.getElementById("cidade").value.trim();
+      const endereco = document.getElementById("endereco").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const obs = document.getElementById("obs").value.trim();
+
+      if (!nome || !telefone || !cep || !cidade || !endereco) {
+        alert("Preencha os campos obrigatórios (*) para continuar.");
         return;
       }
 
-      let mensagem = "🛒 Olá, quero comprar:\n";
+      let mensagem = "Olá! Quero finalizar minha compra:%0A%0A";
       let total = 0;
-
       carrinho.forEach(item => {
-        mensagem += `- ${item.nome} (R$ ${item.preco.toFixed(2)})\n`;
         total += item.preco;
+        mensagem += `• ${item.nome} — ${moeda(item.preco)}%0A`;
       });
+      mensagem += `%0ATotal: ${moeda(total)}%0A%0A`;
+      mensagem += `👤 Nome: ${nome}%0A`;
+      mensagem += `📱 Telefone: ${telefone}%0A`;
+      mensagem += `📍 Endereço: ${endereco}%0A`;
+      mensagem += `🏙️ Cidade/UF: ${cidade}%0A`;
+      mensagem += `📮 CEP: ${cep}%0A`;
+      if (email) mensagem += `📧 Email: ${email}%0A`;
+      if (obs) mensagem += `📝 Observações: ${encodeURIComponent(obs)}%0A`;
 
-      mensagem += `\n💰 Total: R$ ${total.toFixed(2)}\n\n📋 Meus dados:\n`;
-      mensagem += `Nome: ${nome}\nEndereço: ${endereco}\nBairro: ${bairro}\nCidade: ${cidade}\nEstado: ${estado}\nCEP: ${cep}\nTelefone: ${telefone}`;
-
-      let url = `https://wa.me/5547988506647?text=${encodeURIComponent(mensagem)}`;
+      const url = `https://wa.me/5547988506647?text=${encodeURIComponent(decodeURIComponent(mensagem))}`;
       window.open(url, "_blank");
+
+      // Opcional: fechar e limpar carrinho
+      fecharFormulario();
+      // carrinho = []; atualizarCarrinho(); atualizarBadge();
     }
+
+    // Inicializa contador
+    atualizarBadge();
   </script>
+
 </body>
 </html>
 
