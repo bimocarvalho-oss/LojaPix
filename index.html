@@ -349,11 +349,11 @@
 
     // Lista/Total no carrinho
     function atualizarCarrinho() {
-      const lista = document.getElementById("itensCarrinho");
-      const totalSpan = document.getElementById("total");
-      lista.innerHTML = "";
-      let total = 0;
-
+  const lista = document.getElementById("itensMiniCarrinho");
+  const totalSpan = document.getElementById("totalMini");
+  lista.innerHTML = "";
+  let total = 0;
+     
       carrinho.forEach((item, index) => {
         total += item.preco;
         const li = document.createElement('li');
