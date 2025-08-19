@@ -19,9 +19,7 @@
       background: #fff3e0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    header img {
-      max-width: 200px;
-    }
+    header img { max-width: 200px; }
     header h2 {
       font-family: 'Libre Baskerville', serif;
       margin-top: 10px;
@@ -40,10 +38,7 @@
       padding: 15px;
       text-align: center;
     }
-    .produto img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
+    .produto img { max-width: 100%; border-radius: 10px; }
     .preco {
       font-size: 18px;
       font-weight: bold;
@@ -69,10 +64,8 @@
       max-width: 600px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    .guarantee p {
-      margin: 8px 0;
-      font-size: 16px;
-    }
+    .guarantee p { margin: 8px 0; font-size: 16px; }
+
     /* 🛒 Estilo do carrinho */
     #carrinho {
       background: #fff;
@@ -82,14 +75,8 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    #carrinho ul {
-      list-style: none;
-      padding: 0;
-    }
-    #carrinho li {
-      margin: 5px 0;
-      font-size: 15px;
-    }
+    #carrinho ul { list-style: none; padding: 0; }
+    #carrinho li { margin: 5px 0; font-size: 15px; }
     #carrinho button {
       background: red;
       color: white;
@@ -98,18 +85,16 @@
       padding: 3px 6px;
       cursor: pointer;
     }
-    /* 📋 Estilo do formulário */
     #formDados input {
       width: 95%;
       padding: 8px;
-      margin: 6px 0;
+      margin: 5px 0;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-
   <!-- ✅ LOGO -->
   <header>
     <img src="imagens/logo.png" alt="GoldenPi PixStore">
@@ -118,7 +103,90 @@
 
   <!-- ✅ PRODUTOS -->
   <section class="produtos">
-    <!-- ... seus produtos já estão aqui ... -->
+    <div class="produto">
+      <img src="imagens/fone_preto.png" alt="Fone Preto">
+      <h3>Fone Bluetooth Preto</h3>
+      <p>Qualidade de som incrível e conexão estável.</p>
+      <p class="preco">R$ 99,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Fone Preto', 99.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/fone-branco.png" alt="Fone Branco">
+      <h3>Fone Bluetooth Branco</h3>
+      <p>Design elegante e bateria de longa duração.</p>
+      <p class="preco">R$ 109,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Fone Branco', 109.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/fone_rosa.webp" alt="Fone Rosa">
+      <h3>Fone Bluetooth Rosa</h3>
+      <p>Estilo moderno e super confortável.</p>
+      <p class="preco">R$ 119,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Fone Rosa', 119.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/liquidificador-mondial-inox.webp" alt="Liquidificador">
+      <h3>Liquidificador Inox Mondial</h3>
+      <p>Potente e prático para o dia a dia.</p>
+      <p class="preco">R$ 199,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Liquidificador Inox Mondial', 199.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/mini-trituradora.webp" alt="Mini Trituradora">
+      <h3>Mini Trituradora Portátil</h3>
+      <p>Compacta e eficiente para a sua cozinha.</p>
+      <p class="preco">R$ 79,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Mini Trituradora Portátil', 79.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/microondas.png" alt="Micro-ondas">
+      <h3>Micro-ondas</h3>
+      <p>Rápido e eficiente para suas refeições.</p>
+      <p class="preco">R$ 499,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Micro-ondas', 499.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/smartwatch.jpg" alt="Smartwatch">
+      <h3>Smartwatch</h3>
+      <p>Conecte-se e acompanhe sua saúde com estilo.</p>
+      <p class="preco">R$ 249,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Smartwatch', 249.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/trituradora.jpg" alt="Trituradora">
+      <h3>Trituradora Elétrica</h3>
+      <p>Praticidade e rapidez na sua cozinha.</p>
+      <p class="preco">R$ 149,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Trituradora Elétrica', 149.90)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="imagens/Escova.webp" alt="Escova Alisadora">
+      <h3>Escova Alisadora</h3>
+      <p class="preco">R$ 149,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Escova Alisadora', 149.90)">Adicionar ao Carrinho</button>
+      <p class="depoimento">"Deixa meu cabelo perfeito!" - Luiza</p>
+    </div>
+    <div class="produto">
+      <img src="imagens/luminaria.png" alt="Luminária 3D">
+      <h3>Luminária 3D</h3>
+      <p class="preco">R$ 89,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Luminária 3D', 89.90)">Adicionar ao Carrinho</button>
+      <p class="depoimento">"Linda decoração para meu quarto!" - Beatriz</p>
+    </div>
+    <div class="produto">
+      <img src="imagens/camera.png" alt="Câmera Wi-Fi">
+      <h3>Câmera Wi-Fi</h3>
+      <p class="preco">R$ 199,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Câmera Wi-Fi', 199.90)">Adicionar ao Carrinho</button>
+      <p class="depoimento">"Segurança total em casa." - Marcos</p>
+    </div>
+    <div class="produto">
+      <img src="imagens/massageador.png" alt="Massageador Elétrico">
+      <h3>Massageador Elétrico</h3>
+      <p class="preco">R$ 159,90</p>
+      <button class="botao" onclick="adicionarAoCarrinho('Massageador Elétrico', 159.90)">Adicionar ao Carrinho</button>
+      <p class="depoimento">"Alívio imediato para as costas." - Fernanda</p>
+    </div>
   </section>
 
   <!-- ✅ GARANTIAS -->
@@ -139,18 +207,18 @@
     <!-- 📋 FORMULÁRIO DE DADOS -->
     <h4>Seus Dados</h4>
     <form id="formDados">
-      <input type="text" id="nome" placeholder="Nome completo" required>
-      <input type="text" id="endereco" placeholder="Endereço" required>
-      <input type="text" id="bairro" placeholder="Bairro" required>
-      <input type="text" id="cidade" placeholder="Cidade" required>
-      <input type="text" id="estado" placeholder="Estado" required>
-      <input type="text" id="cep" placeholder="CEP" required>
-      <input type="text" id="telefone" placeholder="Telefone" required>
+      <input type="text" id="nome" placeholder="Nome completo" required><br>
+      <input type="text" id="endereco" placeholder="Endereço" required><br>
+      <input type="text" id="bairro" placeholder="Bairro" required><br>
+      <input type="text" id="cidade" placeholder="Cidade" required><br>
+      <input type="text" id="estado" placeholder="Estado" required><br>
+      <input type="text" id="cep" placeholder="CEP" required><br>
+      <input type="text" id="telefone" placeholder="Telefone" required><br>
     </form>
 
     <button class="botao" onclick="finalizarCompra()">Finalizar no WhatsApp</button>
   </div>
-  
+
   <footer>
     <p>© 2025 GoldenPi PixStore - Todos os direitos reservados</p>
   </footer>
@@ -188,7 +256,7 @@
         return;
       }
 
-      // 📋 Captura os dados do formulário
+      // pega os dados do formulário
       let nome = document.getElementById("nome").value;
       let endereco = document.getElementById("endereco").value;
       let bairro = document.getElementById("bairro").value;
@@ -202,7 +270,6 @@
         return;
       }
 
-      // 🛒 Monta mensagem do pedido
       let mensagem = "🛒 Olá, quero comprar:\n";
       let total = 0;
 
@@ -214,15 +281,12 @@
       mensagem += `\n💰 Total: R$ ${total.toFixed(2)}\n\n📋 Meus dados:\n`;
       mensagem += `Nome: ${nome}\nEndereço: ${endereco}\nBairro: ${bairro}\nCidade: ${cidade}\nEstado: ${estado}\nCEP: ${cep}\nTelefone: ${telefone}`;
 
-      // 🔗 Envia para o WhatsApp
       let url = `https://wa.me/5547988506647?text=${encodeURIComponent(mensagem)}`;
       window.open(url, "_blank");
     }
   </script>
-
 </body>
 </html>
-
 
 
 
